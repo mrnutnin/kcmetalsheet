@@ -2217,3 +2217,131 @@ responsive
     padding: 30px;
   }
 }
+/* --- ปรับแต่งปุ่มเปลี่ยนภาษาใหม่ให้สวยเฉี่ยว --- */
+.lang-switch {
+    display: flex;
+    align-items: center;
+    gap: 5px; /* ระยะห่างระหว่างปุ่ม */
+    margin-left: 20px;
+    padding: 10px 0;
+}
+
+.lang-btn {
+    background-color: transparent !important;
+    border: 1.5px solid #232262 !important; /* ใช้สีน้ำเงินเข้มของแบรนด์ */
+    color: #232262 !important;
+    padding: 4px 14px !important;
+    border-radius: 50px !important; /* ทรงแคปซูล */
+    font-size: 13px !important;
+    font-weight: 500 !important;
+    cursor: pointer;
+    transition: all 0.3s ease !important;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* สไตล์ปุ่มตอนที่ถูกเลือก (Active) */
+.lang-btn.active {
+    background-color: #232262 !important;
+    color: #ffffff !important;
+    box-shadow: 0 4px 12px rgba(35, 34, 98, 0.2); /* เงาฟุ้งๆ ด้านล่าง */
+}
+
+/* สไตล์ตอนเอาเมาส์ไปวาง (Hover) */
+.lang-btn:hover {
+    background-color: rgba(35, 34, 98, 0.05) !important;
+    transform: translateY(-1px);
+}
+
+/* สำหรับมือถือ ให้จัดวางให้เหมาะสม */
+@media (max-width: 991px) {
+    .lang-switch {
+        justify-content: center;
+        margin-left: 0;
+        margin-top: 15px;
+    }
+}
+/* --- ปรับแต่งพิเศษสำหรับหน้าจอ iPad และ Tablet --- */
+
+@media (min-width: 768px) and (max-width: 1024px) {
+    /* 1. ขยายรูปภาพ Hero (รูปรถถัง) ให้ใหญ่เต็มจอ iPad */
+    .main-banner .right-image img {
+        max-width: 90% !important;
+        margin: 0 auto 30px auto !important;
+        display: block;
+    }
+
+    /* 2. ปรับระยะห่าง Section ให้กว้างขึ้น ไม่ให้เนื้อหาเบียดขอบจอ */
+    .section {
+        padding-top: 80px !important;
+        padding-bottom: 80px !important;
+    }
+
+    .container {
+        max-width: 95% !important; /* ใช้พื้นที่หน้าจอได้มากขึ้น */
+    }
+
+    /* 3. ปรับตัวอักษรให้อ่านง่ายขึ้นบนจอ Tablet */
+    h4 {
+        font-size: 28px !important;
+        margin-bottom: 20px !important;
+    }
+
+    p {
+        font-size: 18px !important; /* ขยายขนาดตัวอักษรให้อ่านสบายตา */
+        line-height: 1.8 !important;
+    }
+
+    /* 4. ปรับการ์ด Vision/Mission ให้แสดงผลสวยๆ */
+    .service-item {
+        margin-bottom: 30px !important;
+        padding: 40px 30px !important;
+    }
+
+    /* 5. ปรับปุ่มเปลี่ยนภาษาให้ใหญ่ขึ้นพอดีนิ้วกด */
+    .lang-btn {
+        padding: 8px 20px !important;
+        font-size: 15px !important;
+    }
+}
+
+/* --- ป้องกันรูปยืดและรักษาคุณภาพรูปภาพ --- */
+img {
+    height: auto !important;
+    max-width: 100% !important;
+    object-fit: contain !important; /* ป้องกันรูปเบี้ยว */
+}
+/* --- ลดพื้นที่ว่างด้านบนให้กระชับขึ้น --- */
+
+/* 1. ลดความสูงของแถบเมนู (Navbar) */
+.header-area {
+    padding: 10px 0 !important; /* ลดจากเดิมที่อาจจะกว้างไป */
+    height: 80px !important;    /* คุมความสูงให้คงที่ */
+}
+
+/* 2. ดึง Banner หลักขึ้นไปด้านบน */
+.main-banner {
+    padding-top: 130px !important; /* ลดระยะห่างจากขอบบนลงมา */
+    margin-bottom: -50px !important; /* ดึงเนื้อหาถัดไปให้ขยับขึ้นมาหา */
+}
+
+/* 3. ปรับระยะห่างในตัว Banner (ข้อความและรูปภาพ) */
+.main-banner .header-text {
+    margin-top: 0px !important; /* ดึงข้อความขึ้น */
+}
+
+.main-banner .right-image {
+    margin-top: -30px !important; /* ดึงรูปรถถังขยับขึ้นไปอีกนิด */
+}
+
+/* 4. ปรับสำหรับ iPad ให้ดูพอดีหน้าจอพอดี (ไม่เหลือที่ว่างเยอะ) */
+@media (min-width: 768px) and (max-width: 1024px) {
+    .main-banner {
+        padding-top: 100px !important; /* บน iPad ให้ขยับขึ้นไปอีก */
+    }
+    
+    .main-banner .header-text h2 {
+        font-size: 35px !important; /* ปรับขนาดหัวข้อให้พอดีกับพื้นที่ที่ลดลง */
+        line-height: 45px !important;
+    }
+}
