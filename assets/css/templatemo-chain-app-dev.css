@@ -33,10 +33,64 @@ font & reset css
 reset
 --------------------------------------------- 
 */
-html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, div
-pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q,
-s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li,
-figure, header, nav, section, article, aside, footer, figcaption {
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+div pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+font,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+figure,
+header,
+nav,
+section,
+article,
+aside,
+footer,
+figcaption {
   margin: 0;
   padding: 0;
   border: 0;
@@ -87,13 +141,20 @@ html[xmlns] .clearfix {
   height: 1%;
 }
 
-ul, li {
+ul,
+li {
   padding: 0;
   margin: 0;
   list-style: none;
 }
 
-header, nav, section, article, aside, footer, hgroup {
+header,
+nav,
+section,
+article,
+aside,
+footer,
+hgroup {
   display: block;
 }
 
@@ -101,7 +162,8 @@ header, nav, section, article, aside, footer, hgroup {
   box-sizing: border-box;
 }
 
-html, body {
+html,
+body {
   font-family: 'Kanit', sans-serif;
   font-weight: 400;
   background-color: #fff;
@@ -114,7 +176,12 @@ a {
   text-decoration: none !important;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   margin-top: 0px;
   margin-bottom: 0px;
 }
@@ -157,16 +224,21 @@ body {
 }
 
 @media (max-width: 991px) {
-  html, body {
+
+  html,
+  body {
     overflow-x: hidden;
   }
+
   .mobile-top-fix {
     margin-top: 30px;
     margin-bottom: 0px;
   }
+
   .mobile-bottom-fix {
     margin-bottom: 30px;
   }
+
   .mobile-bottom-fix-big {
     margin-bottom: 60px;
   }
@@ -247,8 +319,8 @@ body {
   color: #fff !important;
   text-transform: capitalize;
   font-size: 15px;
-  background: rgb(19,175,240);
-  background: linear-gradient(105deg, rgba(91,104,235,1) 0%, rgba(40,225,253,1) 100%);
+  background: rgb(19, 175, 240);
+  background: linear-gradient(105deg, rgba(91, 104, 235, 1) 0%, rgba(40, 225, 253, 1) 100%);
   border-radius: 23px;
   font-weight: 500 !important;
   letter-spacing: 0.3px !important;
@@ -257,8 +329,8 @@ body {
 
 .gradient-button a:hover {
   color: #fff !important;
-  background: rgb(19,175,240);
-  background: linear-gradient(105deg, rgba(91,104,235,1) 0%, rgba(40,225,253,1) 100%);
+  background: rgb(19, 175, 240);
+  background: linear-gradient(105deg, rgba(91, 104, 235, 1) 0%, rgba(40, 225, 253, 1) 100%);
 }
 
 .border-button a {
@@ -290,13 +362,13 @@ header
 
 .background-header {
   background-color: #fff !important;
-  height: 80px!important;
+  height: 80px !important;
   border-bottom: none !important;
-  position: fixed!important;
+  position: fixed !important;
   top: 0px;
   left: 0px;
   right: 0px;
-  box-shadow: 0px 5px 8px rgba(0,0,0,0.03);
+  box-shadow: 0px 5px 8px rgba(0, 0, 0, 0.03);
 }
 
 .background-header .logo,
@@ -330,7 +402,7 @@ header
 
 .header-area {
   background-color: transparent;
-  border-bottom: 1px solid rgba(42,42,42,0.2);
+  border-bottom: 1px solid rgba(42, 42, 42, 0.2);
   position: absolute;
   left: 0px;
   right: 0px;
@@ -356,12 +428,12 @@ header
 }
 
 .header-area .main-nav .logo {
-    line-height: 100px;
-    float: left;
-    -webkit-transition: all 0.3s ease 0s;
-    -moz-transition: all 0.3s ease 0s;
-    -o-transition: all 0.3s ease 0s;
-    transition: all 0.3s ease 0s;
+  line-height: 100px;
+  float: left;
+  -webkit-transition: all 0.3s ease 0s;
+  -moz-transition: all 0.3s ease 0s;
+  -o-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
 }
 
 .background-header .main-nav .logo {
@@ -395,17 +467,17 @@ header
   padding-left: 40px;
 }
 
-.header-area .main-nav .nav li:last-child a ,
+.header-area .main-nav .nav li:last-child a,
 .background-header .main-nav .nav li:last-child a,
-.header-area .main-nav .nav li:nth-child(6) a ,
+.header-area .main-nav .nav li:nth-child(6) a,
 .background-header .main-nav .nav li:nth-child(6) a {
   padding: 0px 20px !important;
   font-weight: 400;
 }
 
-.header-area .main-nav .nav li:last-child a:hover ,
+.header-area .main-nav .nav li:last-child a:hover,
 .background-header .main-nav .nav li:last-child a:hover,
-.header-area .main-nav .nav li:nth-child(6) a:hover ,
+.header-area .main-nav .nav li:nth-child(6) a:hover,
 .background-header .main-nav .nav li:nth-child(6) a:hover {
   color: #fff !important;
 }
@@ -428,7 +500,7 @@ header
 
 .header-area .main-nav .nav li:hover a,
 .header-area .main-nav .nav li a.active {
-  color: #4b8ef1!important;
+  color: #4b8ef1 !important;
 }
 
 .header-area .main-nav .nav li:last-child a.active {
@@ -437,7 +509,7 @@ header
 
 .background-header .main-nav .nav li:hover a,
 .background-header .main-nav .nav li a.active {
-  color: #4b8ef1!important;
+  color: #4b8ef1 !important;
   opacity: 1;
 }
 
@@ -483,7 +555,7 @@ header
   opacity: 1;
   display: block;
   background: #f7f7f7;
-  color: #2a2a2a!important;
+  color: #2a2a2a !important;
   padding-left: 20px;
   height: 40px;
   line-height: 40px;
@@ -499,7 +571,7 @@ header
 
 .header-area .main-nav .nav li.submenu ul li a:hover {
   background: #fff;
-  color: #4b8ef1!important;
+  color: #4b8ef1 !important;
   padding-left: 25px;
 }
 
@@ -647,64 +719,79 @@ header
     padding-left: 12px;
     padding-right: 12px;
   }
+
   .header-area .main-nav:before {
     display: none;
   }
 }
 
 @media (max-width: 992px) {
-  .header-area .main-nav .nav li:last-child  ,
+
+  .header-area .main-nav .nav li:last-child,
   .background-header .main-nav .nav li:last-child {
     color: #069;
   }
+
   .header-area .main-nav .nav li:nth-child(6),
   .background-header .main-nav .nav li:nth-child(6) {
     padding-right: 0px;
   }
+
   .background-header .nav li a.active:after {
     display: none;
   }
 }
 
 @media (max-width: 767px) {
+
   .pre-header ul.info li:last-child,
   .pre-header ul.info li:nth-child(6) {
-    display: none!important;
+    display: none !important;
   }
+
   .background-header .main-nav .nav {
     margin-top: 80px !important;
   }
+
   .header-area .main-nav .logo {
     color: #1e1e1e;
   }
+
   .header-area.header-sticky .nav li a:hover,
   .header-area.header-sticky .nav li a.active {
-    color: #4b8ef1!important;
+    color: #4b8ef1 !important;
     opacity: 1;
   }
+
   .header-area.header-sticky .nav li.search-icon a {
     width: 100%;
   }
+
   .header-area {
     background-color: #fff;
     padding: 0px 15px;
     height: 100px;
     box-shadow: none;
     text-align: center;
-    box-shadow: 0px 5px 8px rgba(0,0,0,0.03);
+    box-shadow: 0px 5px 8px rgba(0, 0, 0, 0.03);
   }
+
   .header-area .container {
     padding: 0px;
   }
+
   .header-area .logo {
     margin-left: 30px;
   }
+
   .header-area .menu-trigger {
     display: block !important;
   }
+
   .header-area .main-nav {
     overflow: hidden;
   }
+
   .header-area .main-nav .nav {
     float: none;
     width: 100%;
@@ -715,15 +802,19 @@ header
     transition: all 0s ease 0s;
     margin-left: 0px;
   }
+
   .background-header .nav {
     margin-top: 80px;
   }
+
   .header-area .main-nav .nav li:first-child {
     border-top: 1px solid #eee;
   }
+
   .header-area.header-sticky .nav {
     margin-top: 100px;
   }
+
   .header-area .main-nav .nav li {
     width: 100%;
     background: #fff;
@@ -731,6 +822,7 @@ header
     padding-left: 0px !important;
     padding-right: 0px !important;
   }
+
   .header-area .main-nav .nav li a {
     height: 50px !important;
     line-height: 50px !important;
@@ -739,10 +831,12 @@ header
     background: #f7f7f7 !important;
     color: #191a20 !important;
   }
+
   .header-area .main-nav .nav li a:hover {
     background: #eee !important;
-    color: #4b8ef1!important;
+    color: #4b8ef1 !important;
   }
+
   .header-area .main-nav .nav li.submenu ul {
     position: relative;
     visibility: inherit;
@@ -755,23 +849,29 @@ header
     box-shadow: none;
     height: 0px;
   }
+
   .header-area .main-nav .nav li.submenu ul li a {
     font-size: 12px;
     font-weight: 400;
   }
+
   .header-area .main-nav .nav li.submenu ul li a:hover:before {
     width: 0px;
   }
+
   .header-area .main-nav .nav li.submenu ul.active {
     height: auto !important;
   }
+
   .header-area .main-nav .nav li.submenu:after {
     color: #3B566E;
     right: 25px;
     font-size: 14px;
     top: 15px;
   }
-  .header-area .main-nav .nav li.submenu:hover ul, .header-area .main-nav .nav li.submenu:focus ul {
+
+  .header-area .main-nav .nav li.submenu:hover ul,
+  .header-area .main-nav .nav li.submenu:focus ul {
     height: 0px;
   }
 }
@@ -789,97 +889,97 @@ preloader
 */
 
 .js-preloader {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: #fff;
-    display: -webkit-box;
-    display: flex;
-    -webkit-box-align: center;
-    align-items: center;
-    -webkit-box-pack: center;
-    justify-content: center;
-    opacity: 1;
-    visibility: visible;
-    z-index: 9999;
-    -webkit-transition: opacity 0.25s ease;
-    transition: opacity 0.25s ease;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #fff;
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  justify-content: center;
+  opacity: 1;
+  visibility: visible;
+  z-index: 9999;
+  -webkit-transition: opacity 0.25s ease;
+  transition: opacity 0.25s ease;
 }
 
 .js-preloader.loaded {
-    opacity: 0;
-    visibility: hidden;
-    pointer-events: none;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
 }
 
 @-webkit-keyframes dot {
-    50% {
-        -webkit-transform: translateX(96px);
-        transform: translateX(96px);
-    }
+  50% {
+    -webkit-transform: translateX(96px);
+    transform: translateX(96px);
+  }
 }
 
 @keyframes dot {
-    50% {
-        -webkit-transform: translateX(96px);
-        transform: translateX(96px);
-    }
+  50% {
+    -webkit-transform: translateX(96px);
+    transform: translateX(96px);
+  }
 }
 
 @-webkit-keyframes dots {
-    50% {
-        -webkit-transform: translateX(-31px);
-        transform: translateX(-31px);
-    }
+  50% {
+    -webkit-transform: translateX(-31px);
+    transform: translateX(-31px);
+  }
 }
 
 @keyframes dots {
-    50% {
-        -webkit-transform: translateX(-31px);
-        transform: translateX(-31px);
-    }
+  50% {
+    -webkit-transform: translateX(-31px);
+    transform: translateX(-31px);
+  }
 }
 
 .preloader-inner {
-    position: relative;
-    width: 142px;
-    height: 40px;
-    background: #fff;
+  position: relative;
+  width: 142px;
+  height: 40px;
+  background: #fff;
 }
 
 .preloader-inner .dot {
-    position: absolute;
-    width: 16px;
-    height: 16px;
-    top: 12px;
-    left: 15px;
-    background: #4b8ef1;
-    border-radius: 50%;
-    -webkit-transform: translateX(0);
-    transform: translateX(0);
-    -webkit-animation: dot 2.8s infinite;
-    animation: dot 2.8s infinite;
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  top: 12px;
+  left: 15px;
+  background: #4b8ef1;
+  border-radius: 50%;
+  -webkit-transform: translateX(0);
+  transform: translateX(0);
+  -webkit-animation: dot 2.8s infinite;
+  animation: dot 2.8s infinite;
 }
 
 .preloader-inner .dots {
-    -webkit-transform: translateX(0);
-    transform: translateX(0);
-    margin-top: 12px;
-    margin-left: 31px;
-    -webkit-animation: dots 2.8s infinite;
-    animation: dots 2.8s infinite;
+  -webkit-transform: translateX(0);
+  transform: translateX(0);
+  margin-top: 12px;
+  margin-left: 31px;
+  -webkit-animation: dots 2.8s infinite;
+  animation: dots 2.8s infinite;
 }
 
 .preloader-inner .dots span {
-    display: block;
-    float: left;
-    width: 16px;
-    height: 16px;
-    margin-left: 16px;
-    background: #4b8ef1;
-    border-radius: 50%;
+  display: block;
+  float: left;
+  width: 16px;
+  height: 16px;
+  margin-left: 16px;
+  background: #4b8ef1;
+  border-radius: 50%;
 }
 
 
@@ -965,7 +1065,7 @@ Services Style
   position: relative;
 }
 
-.services  .section-heading p {
+.services .section-heading p {
   margin-top: 10px;
   margin-left: 18%;
   margin-right: 18%;
@@ -1013,7 +1113,7 @@ Services Style
   position: relative;
   z-index: 1;
   padding: 30px;
-  box-shadow: 0px 0px 15px rgba(0,0,0,0.1);
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
   background-color: #fff;
   border-radius: 10px;
   border-top-right-radius: 50px;
@@ -1116,7 +1216,7 @@ About Us
 }
 
 .about-us .box-item {
-  box-shadow: 0px 0px 15px rgba(0,0,0,0.07);
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.07);
   padding: 10px 30px;
   background-color: #fff;
   border-radius: 40px;
@@ -1179,12 +1279,12 @@ The Clients
   margin-top: 130px;
 }
 
-.the-clients  .section-heading {
+.the-clients .section-heading {
   text-align: center;
   margin-bottom: 80px;
 }
 
-.the-clients  .section-heading p {
+.the-clients .section-heading p {
   margin-top: 10px;
   margin-left: 18%;
   margin-right: 18%;
@@ -1324,12 +1424,12 @@ The Clients
   padding-top: 130px;
 }
 
-.pricing-tables  .section-heading {
+.pricing-tables .section-heading {
   text-align: center;
   margin-bottom: 80px;
 }
 
-.pricing-tables  .section-heading p {
+.pricing-tables .section-heading p {
   margin-top: 10px;
   margin-left: 18%;
   margin-right: 18%;
@@ -1337,7 +1437,7 @@ The Clients
 
 .pricing-item-regular {
   margin-top: 30px;
-  box-shadow: 0px 0px 15px rgba(0,0,0,0.07);
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.07);
   border-radius: 50px;
   padding: 90px 30px;
   text-align: center;
@@ -1412,7 +1512,7 @@ The Clients
 }
 
 .pricing-item-pro {
-  box-shadow: 0px 0px 15px rgba(0,0,0,0.07);
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.07);
   border-radius: 50px;
   padding: 120px 30px;
   text-align: center;
@@ -1666,7 +1766,8 @@ footer #search button:hover {
 .footer-widget ul li a {
   font-size: 15px;
   color: #fff;
-  transition: all .3s;;
+  transition: all .3s;
+  ;
 }
 
 .footer-widget a:hover {
@@ -1758,6 +1859,7 @@ a.btn_red {
   width: 45%;
   margin-left: 5%;
 }
+
 /* Popup Styles*/
 
 .popupHeader {
@@ -1799,7 +1901,7 @@ a.btn_red {
 
 .social_login .icon {
   display: inline-block;
-  
+
   padding: 5px 10px;
   margin-right: 10px;
   float: left;
@@ -1850,6 +1952,7 @@ a.btn_red {
 .action_btns a {
   display: block;
 }
+
 /* User Login Form */
 
 .user_login {
@@ -1897,6 +2000,7 @@ a.btn_red {
   color: #4b8ef1;
   transition: all .3s;
 }
+
 /* User Register Form */
 
 .user_register {
@@ -1951,14 +2055,16 @@ responsive
   .header-area .main-nav .logo h4 {
     font-size: 24px;
   }
+
   .header-area .main-nav .logo h4 img {
     max-width: 25px;
     margin-left: 0px;
   }
+
   .header-area .main-nav .nav li:last-child {
     padding-left: 20px;
   }
-  
+
   .main-banner .left-content h2 {
     z-index: 2;
     position: relative;
@@ -1977,104 +2083,134 @@ responsive
   .header-area {
     background-color: #fff;
   }
+
   .main-banner:after {
     display: none;
-  } 
+  }
+
   .main-banner .left-content h2 {
     color: #2a2a2a;
     margin-right: 0;
   }
+
   .main-banner .left-content p {
     color: #afafaf;
     margin-right: 0;
   }
+
   .main-banner .left-content .white-button a {
     background-color: #4b8ef1;
     color: #fff !important;
   }
+
   form#contact {
     overflow: hidden;
   }
+
   .header-area .main-nav .logo h4 {
     font-size: 20px;
   }
+
   .main-banner .left-content {
     margin-right: 0px;
   }
+
   .main-banner {
     text-align: center;
     padding: 226px 0px 30px 0px;
   }
+
   .main-banner:before {
     display: none;
   }
+
   .main-banner .right-image {
     margin: 30px auto 0px auto;
     text-align: center;
   }
+
   .features-item {
     margin-bottom: 45px;
   }
+
   .last-features-item,
   .last-skill-item {
     margin-bottom: 0px !important;
   }
+
   .skill-item {
     margin-bottom: 30px;
   }
+
   .about-left-image img {
     margin-right: 0px;
-    margin-bottom: 45px;;
+    margin-bottom: 45px;
+    ;
   }
+
   .services .naccs .menu div {
     font-size: 15px;
     font-weight: 500;
   }
+
   .service-item {
     text-align: center;
     margin-bottom: 30px;
   }
+
   .about-us .box-item {
     text-align: center;
   }
+
   .about-us:after {
     display: none;
   }
+
   .about-us .gradient-button,
   .about-us span {
     text-align: center;
     display: block;
   }
+
   .about-us .right-image {
     margin-top: 30px;
   }
+
   .service-item .icon {
     margin: 0 auto 30px auto;
   }
+
   .about-us .section-heading {
     text-align: center;
   }
+
   .about-us .left-image {
     margin-right: 30px;
     margin-left: 30px;
     margin-bottom: 45px;
   }
+
   .blog-posts {
     margin-left: 0px;
     margin-top: 30px;
   }
+
   .post-item {
     margin-bottom: 70px;
   }
+
   .pricing-item-regular {
     margin-bottom: 30px;
   }
+
   .our-portfolio .owl-nav {
     display: none !important;
   }
+
   .contact-info {
     margin-top: 60px;
   }
+
   form#contact {
     padding: 45px;
   }
@@ -2084,16 +2220,20 @@ responsive
   .the-clients .naccs .menu div {
     text-align: center;
   }
+
   footer .section-heading h4 {
     color: #2a2a2a;
   }
+
   footer #search {
     margin-bottom: 45px;
   }
+
   footer {
     padding-top: 0px;
     text-align: center;
   }
+
   .footer-widget ul {
     display: block;
     width: 100%;
@@ -2101,10 +2241,12 @@ responsive
     text-align: center;
     margin: 0 auto;
   }
+
   .footer-widget h4 {
     margin-top: 45px;
     margin-bottom: 20px;
   }
+
   footer #search input {
     border: 1px solid #eee;
     color: #afafaf;
@@ -2113,67 +2255,86 @@ responsive
     margin-bottom: 15px;
     padding: 0px 30px;
   }
+
   footer #search button {
     background-color: #fff;
     color: #4b8ef1;
   }
-  footer #search input::placeholder { 
+
+  footer #search input::placeholder {
     color: #2a2a2a;
   }
+
   .header-area .main-nav .logo h4 {
     font-size: 30px;
   }
+
   .header-area .main-nav .logo h4 img {
     max-width: 30px;
     margin-left: 5px;
   }
+
   .main-banner .info-stat {
     margin-bottom: 15px;
   }
+
   .menu .thumb span.date {
     margin-bottom: -20px;
     display: block;
   }
+
   .service-item {
     text-align: center;
     padding: 30px;
   }
+
   .menu .thumb span.category {
     display: none;
   }
+
   .about-us .right-image {
     margin-top: 30px;
   }
+
   .service-item .icon {
     float: none;
     margin-right: 0px;
     margin-bottom: 15px;
   }
+
   .service-item .right-content {
     display: inline-block;
   }
+
   .services .naccs .menu div .thumb {
     padding: 5px;
   }
+
   .services .icon img {
     margin: 0px;
   }
+
   .the-clients .nacc .thumb .down-content .right-content {
     margin-left: 0px;
     margin-top: 15px;
   }
+
   .services ul.nacc li.active {
     padding: 45px;
   }
-  .services .naccs .menu div  {
+
+  .services .naccs .menu div {
     font-size: 0px;
   }
+
   .the-clients .nacc .thumb .down-content {
     text-align: center;
   }
+
   .services ul.nacc li .right-image img {
     float: none;
   }
+
   .our-portfolio .section-heading,
   .about-us .section-heading,
   .about-us .about-item,
@@ -2181,151 +2342,175 @@ responsive
   .about-us .main-green-button {
     text-align: center;
   }
+
   .our-portfolio .section-heading .line-dec {
     margin: 0 auto;
   }
+
   .our-services .section-heading {
     margin-left: 15px;
     margin-right: 15px;
   }
+
   .free-quote form input {
     margin-left: 0px;
     padding: 0px 30px;
   }
+
   .free-quote form button {
     margin-left: 0px;
     border-bottom-left-radius: 40px;
     border-top-right-radius: 0px;
   }
+
   .blog-posts {
     margin-left: 0px;
     margin-top: 30px;
   }
+
   .post-item {
     margin-bottom: 30px;
   }
+
   .post-item .thumb img {
     max-width: 140px;
   }
+
   .post-item .right-content p {
     display: none;
   }
+
   .about-us .about-item {
     margin-top: 15px;
   }
+
   form#contact {
     padding: 30px;
   }
 }
+
 /* ============================================================
    ULTIMATE REVISED: กระชับพื้นที่ ไม่ทับบาร์ สวยสมบูรณ์แบบ
    ============================================================ */
 
 /* 1. จัดระเบียบแถบเมนู (Navbar) ให้คงที่และดูคลีน */
 .header-area {
-    height: 80px !important; 
-    background-color: #ffffff !important;
-    display: flex !important;
-    align-items: center !important;
-    z-index: 10000 !important;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.05) !important;
-    position: fixed !important;
-    top: 0 !important;
-    padding: 0 !important;
+  height: 80px !important;
+  background-color: #ffffff !important;
+  display: flex !important;
+  align-items: center !important;
+  z-index: 10000 !important;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05) !important;
+  position: fixed !important;
+  top: 0 !important;
+  padding: 0 !important;
 }
 
 /* 2. ปรับระยะ Banner ให้กระชับ (เลื่อนขึ้นมาให้เกือบชิดบาร์แต่ไม่ทับ) */
 .main-banner {
-    /* ใช้ padding-top 110px เพื่อให้พ้นบาร์ 80px และมีพื้นที่หายใจกำลังสวย */
-    padding-top: 110px !important; 
-    margin-bottom: -40px !important; /* ดึงเนื้อหาถัดไปให้ชิดขึ้น */
-    background-position: center center !important;
+  /* ใช้ padding-top 110px เพื่อให้พ้นบาร์ 80px และมีพื้นที่หายใจกำลังสวย */
+  padding-top: 110px !important;
+  margin-bottom: -40px !important;
+  /* ดึงเนื้อหาถัดไปให้ชิดขึ้น */
+  background-position: center center !important;
 }
 
 /* 3. ดึงรูปรถถังและข้อความให้สมดุล (แก้ปัญหารูปเลยบาร์) */
 .main-banner .header-text {
-    margin-top: 0px !important; 
+  margin-top: 0px !important;
 }
 
 .main-banner .right-image img {
-    max-width: 100% !important;
-    height: auto !important; 
-    object-fit: contain !important;
-    margin-top: 0px !important; /* ปรับเป็น 0 เพื่อให้รูปไม่ลอยขึ้นไปทับบาร์ */
+  max-width: 100% !important;
+  height: auto !important;
+  object-fit: contain !important;
+  margin-top: 0px !important;
+  /* ปรับเป็น 0 เพื่อให้รูปไม่ลอยขึ้นไปทับบาร์ */
 }
 
 /* 4. ปุ่มเปลี่ยนภาษาแบบ Pill Shape ที่คุณต้องการ */
 .lang-switch {
-    display: flex;
-    align-items: center;
-    gap: 4px;
-    margin-left: 20px;
-    background: #f1f4f9; /* พื้นหลังจางๆ ให้ดูเป็นกลุ่มก้อนแบบรูปที่ 2 */
-    padding: 4px;
-    border-radius: 50px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  margin-left: 20px;
+  background: #f1f4f9;
+  /* พื้นหลังจางๆ ให้ดูเป็นกลุ่มก้อนแบบรูปที่ 2 */
+  padding: 4px;
+  border-radius: 50px;
 }
 
 .lang-btn {
-    background-color: transparent !important;
-    border: none !important;
-    color: #232262 !important;
-    padding: 6px 16px !important;
-    border-radius: 50px !important;
-    font-size: 13px !important;
-    font-weight: 600 !important;
-    cursor: pointer;
-    transition: all 0.3s ease !important;
-    text-transform: uppercase;
+  background-color: transparent !important;
+  border: none !important;
+  color: #232262 !important;
+  padding: 6px 16px !important;
+  border-radius: 50px !important;
+  font-size: 13px !important;
+  font-weight: 600 !important;
+  cursor: pointer;
+  transition: all 0.3s ease !important;
+  text-transform: uppercase;
 }
 
 .lang-btn.active {
-    background-color: #232262 !important;
-    color: #ffffff !important;
-    box-shadow: 0 4px 10px rgba(35, 34, 98, 0.2);
+  background-color: #232262 !important;
+  color: #ffffff !important;
+  box-shadow: 0 4px 10px rgba(35, 34, 98, 0.2);
 }
 
 /* 5. ปรับจูนสำหรับ iPad (768px - 1024px) ให้สวยพอดีจอ */
 @media (min-width: 768px) and (max-width: 1024px) {
-    .header-area {
-        height: 75px !important;
-    }
-    .main-banner {
-        padding-top: 95px !important; /* บน iPad ขยับขึ้นให้กระชับขึ้นอีก */
-    }
-    .main-banner .header-text h2 {
-        font-size: 32px !important;
-        line-height: 42px !important;
-    }
-    .main-banner .right-image img {
-        max-width: 85% !important;
-        margin: 0 auto !important;
-        display: block;
-    }
-    .section {
-        padding-top: 60px !important;
-        padding-bottom: 60px !important;
-    }
-    p {
-        font-size: 17px !important;
-        line-height: 1.8 !important;
-    }
+  .header-area {
+    height: 75px !important;
+  }
+
+  .main-banner {
+    padding-top: 95px !important;
+    /* บน iPad ขยับขึ้นให้กระชับขึ้นอีก */
+  }
+
+  .main-banner .header-text h2 {
+    font-size: 32px !important;
+    line-height: 42px !important;
+  }
+
+  .main-banner .right-image img {
+    max-width: 85% !important;
+    margin: 0 auto !important;
+    display: block;
+  }
+
+  .section {
+    padding-top: 60px !important;
+    padding-bottom: 60px !important;
+  }
+
+  p {
+    font-size: 17px !important;
+    line-height: 1.8 !important;
+  }
 }
 
 /* 6. ป้องกันรูปเบี้ยว/ยืด ในทุกส่วนของเว็บ */
 img {
-    height: auto !important;
-    max-width: 100% !important;
-    object-fit: contain !important;
+  height: auto !important;
+  max-width: 100% !important;
+  object-fit: contain !important;
 }
+
 /* เมื่อปุ่มถูกเลือก (Active) */
 .lang-btn.active {
-    background-color: #2b3990 !important; /* สีน้ำเงินเข้ม */
-    color: #fff !important;              /* ตัวอักษรขาว */
-    border-color: #2b3990 !important;
+  background-color: #2b3990 !important;
+  /* สีน้ำเงินเข้ม */
+  color: #fff !important;
+  /* ตัวอักษรขาว */
+  border-color: #2b3990 !important;
 }
 
 /* สำหรับมือถือ */
 @media (max-width: 991px) {
+
   /* 1. บังคับให้ Header ขยายตัวตามเมนู */
   .header-area {
     height: auto !important;
@@ -2336,8 +2521,10 @@ img {
 
   /* 2. รายการเมนูแต่ละแถว */
   .mobile-nav-link {
-    padding: 15px 0; /* เพิ่มพื้นที่กดให้ถนัดขึ้น */
-    border-bottom: 1px solid #f0f0f0; /* เส้นคั่นสีอ่อน */
+    padding: 15px 0;
+    /* เพิ่มพื้นที่กดให้ถนัดขึ้น */
+    border-bottom: 1px solid #f0f0f0;
+    /* เส้นคั่นสีอ่อน */
     display: block;
     text-align: center;
     font-size: 16px;
@@ -2352,9 +2539,12 @@ img {
     justify-content: center;
     align-items: center;
     padding: 15px 0;
-    margin: 0; /* เอา margin ออกเพื่อให้ชิดเส้นคั่น */
-    background: #fdfdfd; /* สีพื้นหลังต่างจากเมนูนิดหน่อยให้ดูเด่นขึ้น */
-    border-bottom: 1px solid #f0f0f0; /* เส้นคั่นด้านล่างให้จบสวยๆ */
+    margin: 0;
+    /* เอา margin ออกเพื่อให้ชิดเส้นคั่น */
+    background: #fdfdfd;
+    /* สีพื้นหลังต่างจากเมนูนิดหน่อยให้ดูเด่นขึ้น */
+    border-bottom: 1px solid #f0f0f0;
+    /* เส้นคั่นด้านล่างให้จบสวยๆ */
   }
 
   /* ปรับแต่งปุ่ม TH และ EN */
@@ -2373,6 +2563,89 @@ img {
 
   /* เน้นสีปุ่มที่กำลังใช้งาน (Active) */
   .lang-btn.active {
-    color: #2b3990; /* สีน้ำเงินตามแบรนด์ */
+    color: #2b3990;
+    /* สีน้ำเงินตามแบรนด์ */
   }
+}
+
+/* จัดการตำแหน่งเมนูหลัก */
+.main-nav .nav li.has-dropdown {
+  position: relative;
+}
+
+/* ตั้งค่ากล่องเมนูย่อย */
+.main-nav .nav li .dropdown {
+  position: absolute;
+  background-color: #ffffff;
+  min-width: 230px;
+  top: 100%;
+  left: 0;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  padding: 10px 0;
+  display: none;
+  /* ซ่อนไว้ก่อน */
+  z-index: 100;
+  border-top: 4px solid #2b3990;
+  /* สีน้ำเงินตามแบรนด์ */
+}
+
+/* แสดงเมนูเมื่อ Hover */
+.main-nav .nav li.has-dropdown:hover .dropdown {
+  display: block;
+  animation: fadeInUp 0.3s ease;
+  /* ใช้ animation จากไฟล์เดิมที่มีอยู่ */
+}
+
+/* จัดสไตล์รายการด้านใน */
+.main-nav .nav li .dropdown {
+  position: absolute;
+  background-color: #ffffff;
+  min-width: 280px;
+  /* เพิ่มความกว้างจาก 230px เป็น 280px */
+  top: 100%;
+  left: 0;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  border-radius: 12px;
+  padding: 12px 0;
+  display: none;
+  z-index: 100;
+  border-top: 5px solid #2b3990;
+  /* ขอบหนาขึ้นนิดนึงให้ดูพรีเมียม */
+}
+
+/* จัดสไตล์รายการด้านในให้ตรงกันเป๊ะ */
+.main-nav .nav li .dropdown li a {
+    display: flex !important; /* ใช้ Flexbox จัดวาง */
+    align-items: center !important; /* จัดให้อยู่กึ่งกลางแนวตั้ง */
+    justify-content: flex-start !important; /* ชิดซ้ายเสมอ */
+    padding: 15px 25px !important;
+    color: #333 !important;
+    font-size: 16px !important; 
+    font-weight: 500 !important;
+    line-height: 1.2 !important; /* บีบระยะบรรทัดให้กระชับ */
+    border-bottom: 1px solid #f4f4f4;
+    transition: all 0.3s;
+    text-align: left;
+    white-space: nowrap !important; /* ห้ามตัวหนังสือตัดขึ้นบรรทัดใหม่ */
+    width: 100% !important;
+    box-sizing: border-box !important;
+}
+
+.main-nav .nav li .dropdown li:last-child a {
+  border-bottom: none;
+}
+
+/* เอฟเฟกต์ตอนเมาส์ชี้ (Hover) */
+.main-nav .nav li .dropdown li a:hover {
+    background-color: #f0f4ff;
+    color: #2b3990 !important;
+    padding-left: 30px !important; /* ขยับมากขึ้นเมื่อชี้ */
+}
+
+/* ปรับไอคอนลูกศรตรงเมนูหลักให้ใหญ่ขึ้นเล็กน้อย */
+.fa-angle-down {
+    margin-left: 8px;
+    font-size: 14px !important;
+    vertical-align: middle;
 }
