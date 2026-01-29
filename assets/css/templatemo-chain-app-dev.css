@@ -2317,12 +2317,62 @@ img {
     max-width: 100% !important;
     object-fit: contain !important;
 }
+/* เมื่อปุ่มถูกเลือก (Active) */
+.lang-btn.active {
+    background-color: #2b3990 !important; /* สีน้ำเงินเข้ม */
+    color: #fff !important;              /* ตัวอักษรขาว */
+    border-color: #2b3990 !important;
+}
 
 /* สำหรับมือถือ */
 @media (max-width: 991px) {
-    .lang-switch {
-        justify-content: center;
-        margin-top: 15px;
-        margin-left: 0;
-    }
+  /* 1. บังคับให้ Header ขยายตัวตามเมนู */
+  .header-area {
+    height: auto !important;
+    position: relative !important;
+    background: #fff;
+    padding-bottom: 10px;
+  }
+
+  /* 2. รายการเมนูแต่ละแถว */
+  .mobile-nav-link {
+    padding: 15px 0; /* เพิ่มพื้นที่กดให้ถนัดขึ้น */
+    border-bottom: 1px solid #f0f0f0; /* เส้นคั่นสีอ่อน */
+    display: block;
+    text-align: center;
+    font-size: 16px;
+    font-weight: 500;
+    color: #333;
+    text-decoration: none;
+  }
+
+  /* 3. ปรับแต่งปุ่มเปลี่ยนภาษา (TH/EN) ให้ดูเหมือนรายการเมนู */
+  .lang-switch {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15px 0;
+    margin: 0; /* เอา margin ออกเพื่อให้ชิดเส้นคั่น */
+    background: #fdfdfd; /* สีพื้นหลังต่างจากเมนูนิดหน่อยให้ดูเด่นขึ้น */
+    border-bottom: 1px solid #f0f0f0; /* เส้นคั่นด้านล่างให้จบสวยๆ */
+  }
+
+  /* ปรับแต่งปุ่ม TH และ EN */
+  .lang-btn {
+    font-size: 14px;
+    font-weight: 600;
+    color: #333;
+    padding: 5px 15px;
+    text-decoration: none;
+  }
+
+  /* เพิ่มเส้นคั่นแนวตั้งระหว่าง TH | EN */
+  .lang-btn:first-child {
+    border-right: 1px solid #ddd;
+  }
+
+  /* เน้นสีปุ่มที่กำลังใช้งาน (Active) */
+  .lang-btn.active {
+    color: #2b3990; /* สีน้ำเงินตามแบรนด์ */
+  }
 }
