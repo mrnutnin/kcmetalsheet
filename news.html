@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+     
+    <link rel="icon" type="image/x-icon" href="assets/images/favicon.png">
+     
+    <meta charset="UTF-8">
+     
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+     
+    <meta name="description"
+        content="K.C. METAL SHEET PUBLIC CO.,LTD ผู้ผลิต นำเข้า และ จัดจำหนาย วัสดุก่อสร้าง ภายใต้แบรนด์ &quot;รถถัง&quot; มีสาขาครอบคลุมทั่วประเทศ">
+     
+    <meta name="keywords" content="หลังคาเหล็กตรารถถัง , หลังคาเมทัลชีท , เมทัลชีท , วัสดุก่อสร้าง">
+     
+    <meta name="author" content="หลังคาเหล็กตรารถถัง">
+     
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+     
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+     
+    <link
+        href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+      <title>K.C. METALSHEET PUBLIC COMPANY LIMITED</title>
+
+     
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+     
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+        integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+     
+    <link rel="stylesheet" href="assets/css/templatemo-chain-app-dev.css">
+     
+    <link rel="stylesheet" href="assets/css/animated.css">
+     
+    <link rel="stylesheet" href="assets/css/owl.css">
+     
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
+
+      <style>
+        /* สไตล์เพิ่มเติมเฉพาะหน้านี้ */
+        .page-heading-new {
+            background: linear-gradient(135deg, #2b3990 0%, #1a235a 100%);
+            padding: 160px 0 100px 0;
+            color: #fff;
+            text-align: center;
+            position: relative;
+        }
+
+        .stock-card {
+            background: #fff;
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+            border: none;
+            transition: transform 0.3s;
+            margin-bottom: 30px;
+        }
+
+        .stock-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .info-label {
+            color: #888;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .info-value {
+            color: #2b3990;
+            font-weight: 700;
+            font-size: 18px;
+        }
+
+        .read-more-btn {
+            display: inline-block;
+            background: #2b3990;
+            color: #fff !important;
+            padding: 12px 30px;
+            border-radius: 30px;
+            font-weight: 600;
+            transition: 0.3s;
+            margin-top: 20px;
+            box-shadow: 0 5px 15px rgba(43, 57, 144, 0.3);
+        }
+
+        .read-more-btn:hover {
+            background: #ff581f;
+            /* สีส้มตัดกับสีน้ำเงิน */
+            transform: scale(1.05);
+        }
+
+        .divider-custom {
+            width: 60px;
+            height: 4px;
+            background: #ff581f;
+            margin: 15px auto;
+            border-radius: 2px;
+        }
+
+        /* การ์ดข่าวสาร */
+        .news-item-card {
+            background: #fff;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+            height: 100%;
+            border: 1px solid #eee;
+        }
+
+        .news-item-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 35px rgba(43, 57, 144, 0.15);
+        }
+
+        .news-item-card .thumb {
+            position: relative;
+            height: 220px;
+            overflow: hidden;
+        }
+
+        .news-item-card .thumb img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .news-item-card .thumb .date {
+            position: absolute;
+            left: 20px;
+            top: 20px;
+            background: #ff581f;
+            color: #fff;
+            padding: 5px 15px;
+            border-radius: 50px;
+            font-size: 13px;
+            font-weight: 500;
+        }
+
+        .news-item-card .down-content {
+            padding: 25px;
+        }
+
+        .news-item-card .down-content h4 {
+            font-size: 19px;
+            font-weight: 600;
+            color: #1a235a;
+            margin-bottom: 15px;
+            line-height: 1.5;
+        }
+
+        .news-item-card .down-content p {
+            font-size: 15px;
+            color: #666;
+            margin-bottom: 20px;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            /* จำกัดข้อความแค่ 2 บรรทัด */
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .news-item-card .read-more {
+            font-weight: 600;
+            color: #2b3990;
+            font-size: 14px;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        .news-item-card .read-more:hover {
+            color: #ff581f;
+        }
+
+        /* ปุ่ม Facebook ด้านล่าง */
+        .fb-follow-box {
+            background: #f8f9fa;
+            padding: 40px;
+            border-radius: 30px;
+        }
+
+        .fb-btn {
+            display: inline-block;
+            background: #1877F2;
+            color: #fff !important;
+            padding: 15px 35px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 18px;
+            transition: 0.3s;
+            text-decoration: none;
+        }
+
+        .fb-btn:hover {
+            background: #145dbf;
+            transform: scale(1.05);
+        }
+
+        @media (max-width: 768px) {
+            .news-item-card .thumb {
+                height: 180px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header class="header-area header-sticky wow slideInDown" data-wow-duration="0.75s" data-wow-delay="0s">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <nav class="main-nav">
+                        <a href="index.html" class="logo">
+                            <img src="assets/images/logo2.png" style="width: 50%;" alt="Rodtank">
+                        </a>
+                        <ul class="nav">
+                            <li class="scroll-to-section"><a href="index.html">หน้าแรก</a></li>
+                            <li class="scroll-to-section has-dropdown">
+                                <a href="#" class="active">นักลงทุนสัมพันธ์ <i class="fa fa-angle-down"></i></a>
+                                <ul class="dropdown">
+                                    <li><a href="stock-info.html">ข้อมูลหลักทรัพย์</a></li>
+                                    <li><a href="stock-price.html">ราคาหุ้น</a></li>
+                                    <li><a href="financial-info.html">ข้อมูลสำคัญทางการเงิน</a></li>
+                                    <li><a href="news.html">ข่าวสาร</a></li>
+                                    <li><a href="publications.html">เอกสารเผยแพร่</a></li>
+                                </ul>
+                            </li>
+                            <li class="scroll-to-section"><a href="#contract">ติดต่อเรา</a></li>
+                            <li class="scroll-to-section"><a href="https://rodtank.com"><i
+                                        class="fa fa-shopping-bag"></i> สินค้าของเรา</a></li>
+                            <li>
+                                <div class="lang-switch">
+                                    <button class="lang-btn active" onclick="setLang('th')">TH</button>
+                                    <button class="lang-btn" onclick="setLang('en')">EN</button>
+                                </div>
+                            </li>
+                        </ul>
+                        <a class='menu-trigger'><span>Menu</span></a>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="page-heading-new">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h2 data-th="ข่าวสารและกิจกรรม" data-en="News & Updates">ข่าวสารและกิจกรรม</h2>
+                    <div class="divider-custom"></div>
+                    <p data-th="อัปเดตข่าวสารล่าสุดจาก เค.ซี. เมทัลชีท"
+                        data-en="Stay updated with the latest news from K.C. Metal Sheet">
+                        อัปเดตข่าวสารล่าสุดจาก เค.ซี. เมทัลชีท
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="news-section mt-5 mb-5">
+        <div class="container">
+            <div class="row">
+
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="news-item-card">
+                        <div class="thumb">
+                            <img src="assets/images/news-sample-1.jpg" alt="News 1">
+                            <div class="date">15 ต.ค. 67</div>
+                        </div>
+                        <div class="down-content">
+                            <h4 data-th="KCM ร่วมงานแสดงนิทรรศการวัสดุก่อสร้าง"
+                                data-en="KCM joins construction materials exhibition">
+                                KCM ร่วมงานแสดงนิทรรศการวัสดุก่อสร้าง
+                            </h4>
+                            <p>สรุปกิจกรรมและภาพบรรยากาศการออกบูธแนะนำสินค้าหลังคาเหล็กตรารถถัง...</p>
+                            <a href="https://www.facebook.com/metalsheet.Rodtang" target="_blank" class="read-more">
+                                <span data-th="อ่านต่อที่ Facebook" data-en="Read more on Facebook">อ่านต่อที่
+                                    Facebook</span>
+                                <i class="fab fa-facebook"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="news-item-card">
+                        <div class="thumb">
+                            <img src="assets/images/news-sample-2.jpg" alt="News 2">
+                            <div class="date">10 ต.ค. 67</div>
+                        </div>
+                        <div class="down-content">
+                            <h4 data-th="ประกาศผลประกอบการไตรมาสที่ 3" data-en="Q3 Financial Results Announcement">
+                                ประกาศผลประกอบการไตรมาสที่ 3
+                            </h4>
+                            <p>บริษัท เค.ซี. เมทัลชีท จำกัด (มหาชน) แถลงผลการดำเนินงานประจำปี...</p>
+                            <a href="https://www.facebook.com/metalsheet.Rodtang" target="_blank" class="read-more">
+                                <span data-th="อ่านรายละเอียด" data-en="View Details">อ่านรายละเอียด</span>
+                                <i class="fa fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="news-item-card">
+                        <div class="thumb">
+                            <img src="assets/images/news-sample-3.jpg" alt="News 3">
+                            <div class="date">01 ต.ค. 67</div>
+                        </div>
+                        <div class="down-content">
+                            <h4 data-th="โปรโมชั่นหลังคาเหล็กตรารถถัง" data-en="Special Promotion for Rodtang Brand">
+                                โปรโมชั่นหลังคาเหล็กตรารถถัง
+                            </h4>
+                            <p>พบกับโปรโมชั่นสุดพิเศษประจำเดือนตุลาคม สำหรับช่างและผู้รับเหมา...</p>
+                            <a href="https://www.facebook.com/metalsheet.Rodtang" target="_blank" class="read-more">
+                                <span data-th="ดูโปรโมชั่น" data-en="View Promotion">ดูโปรโมชั่น</span>
+                                <i class="fab fa-facebook"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="row mt-5">
+                <div class="col-lg-12 text-center">
+                    <div class="fb-follow-box">
+                        <h5 class="mb-3">ติดตามข่าวสารแบบเรียลไทม์ได้ที่ Facebook Fanpage</h5>
+                        <a href="https://www.facebook.com/metalsheet.Rodtang" target="_blank" class="fb-btn">
+                            <i class="fab fa-facebook-square"></i> หลังคาเหล็กตรารถถัง - KCM
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer id="newsletter">
+        <div class="container">
+            <!-- <div class="row">
+        <div class="col-lg-8 offset-lg-2">
+          <div class="section-heading">
+            <h4>Join our mailing list to receive the news &amp; latest trends</h4>
+          </div>
+        </div>
+        <div class="col-lg-6 offset-lg-3">
+          <form id="search" action="#" method="GET">
+            <div class="row">
+              <div class="col-lg-6 col-sm-6">
+                <fieldset>
+                  <input type="address" name="address" class="email" placeholder="Email Address..." autocomplete="on" required>
+                </fieldset>
+              </div>
+              <div class="col-lg-6 col-sm-6">
+                <fieldset>
+                  <button type="submit" class="main-button">Subscribe Now <i class="fa fa-angle-right"></i></button>
+                </fieldset>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div> -->
+            <div class="row">
+                <div class="col-lg-3">
+                    <div class="footer-widget">
+                        <h4 data-th="ติดต่อเรา" data-en="Contact Us">ติดต่อเรา</h4>
+                        <p style="color:rgb(251, 249, 249);"
+                            data-th="567 หมู่ 2 ถ.เลี่ยงเมือง ต.พระลับ อ.เมือง จ.ขอนแก่น 40000"
+                            data-en="567 Moo 2, Bypass Road, Phra Lap, Mueang, Khon Kaen 40000">
+                            567 หมู่ 2 ถ.เลี่ยงเมือง ต.พระลับ อ.เมือง จ.ขอนแก่น 40000
+                        </p>
+                        <p><a href="#">043-306999</a></p>
+                        <p><a href="#">kcm@kcmetalsheet.com </a></p>
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <div class="footer-widget">
+                        <!-- <h4>About Us</h4>
+            <ul>
+              <li><a href="#">Home</a></li>
+              <li><a href="#">Services</a></li>
+              <li><a href="#">About</a></li>
+              <li><a href="#">Testimonials</a></li>
+              <li><a href="#">Pricing</a></li>
+            </ul>
+            <ul>
+              <li><a href="#">About</a></li>
+              <li><a href="#">Testimonials</a></li>
+              <li><a href="#">Pricing</a></li>
+            </ul> -->
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <div class="footer-widget">
+                        <h4 data-th="ลิงก์ที่เป็นประโยชน์" data-en="Useful Links">ลิงก์ที่เป็นประโยชน์</h4>
+                        <ul>
+                            <li>
+                                <a href="ksee/privacy-policy.html">
+                                    <span data-th="นโยบายความเป็นส่วนตัว Ksee"
+                                        data-en="Ksee Privacy Policy">นโยบายความเป็นส่วนตัว
+                                        Ksee</span>
+                                </a>
+                            </li>
+                        </ul>
+                        <li><a href="#"></a></li>
+                        <li><a href="#"></a></li>
+                        <li><a href="#"></a></li>
+                        <li><a href="#"> </a></li>
+                        </ul>
+
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <div class="footer-widget">
+                        <h4 data-th="เกี่ยวกับบริษัทเรา" data-en="About Our Company">About Our Company</h4>
+                        <div class="logo">
+                            <img src="assets/images/white-logo2.png" alt="">
+                        </div>
+                        <p data-th="มุ่งมั่นเป็นผู้นำด้านการผลิต จำหน่ายและบริการ ผลิตภัณฑ์โครงสร้างอาคารเหล็กสำเร็จรูป (Steel Building Solution) 
+            ตลอดจนอุปกรณ์ติดตั้ง เพื่อตอบสนองความต้องการของลูกค้า พร้อมสร้างความประทับใจ และมีส่วนร่วมกับความสำเร็จของลูกค้า 
+            ด้วยการปรับปรุงและพัฒนากระบวนการปฏิบัติงานอย่างต่อเนื่อง"
+                            data-en="Committed to being a leader in the production, distribution, and service of Steel Building Solution products and installation accessories. We aim to meet all customer needs, creating impressive experiences and contributing to our customers' success through continuous improvement and development of our operational processes.">
+                            มุ่งมั่นเป็นผู้นำด้านการผลิต จำหน่ายและบริการ ผลิตภัณฑ์โครงสร้างอาคารเหล็กสำเร็จรูป (Steel
+                            Building
+                            Solution)
+                            ตลอดจนอุปกรณ์ติดตั้ง เพื่อตอบสนองความต้องการของลูกค้า พร้อมสร้างความประทับใจ
+                            และมีส่วนร่วมกับความสำเร็จของลูกค้า
+                            ด้วยการปรับปรุงและพัฒนากระบวนการปฏิบัติงานอย่างต่อเนื่อง
+                        </p>
+                    </div>
+                </div>
+                <div class="col-lg-12">
+                    <div class="copyright-text">
+                        <p>Copyright © 2024 | Powered by Rodtank.
+                            <!-- <br>Design: <a href="https://templatemo.com/" target="_blank" title="css templates">TemplateMo</a></p> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/custom.js"></script>
+    <script src="assets/js/language-switch.js"></script>
+</body>
+
+</html>

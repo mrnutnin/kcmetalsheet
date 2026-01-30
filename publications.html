@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+     
+    <link rel="icon" type="image/x-icon" href="assets/images/favicon.png">
+     
+    <meta charset="UTF-8">
+     
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+     
+    <meta name="description"
+        content="K.C. METAL SHEET PUBLIC CO.,LTD ผู้ผลิต นำเข้า และ จัดจำหนาย วัสดุก่อสร้าง ภายใต้แบรนด์ &quot;รถถัง&quot; มีสาขาครอบคลุมทั่วประเทศ">
+     
+    <meta name="keywords" content="หลังคาเหล็กตรารถถัง , หลังคาเมทัลชีท , เมทัลชีท , วัสดุก่อสร้าง">
+     
+    <meta name="author" content="หลังคาเหล็กตรารถถัง">
+     
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+     
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+     
+    <link
+        href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+      <title>K.C. METALSHEET PUBLIC COMPANY LIMITED</title>
+
+     
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+     
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+        integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+     
+    <link rel="stylesheet" href="assets/css/templatemo-chain-app-dev.css">
+     
+    <link rel="stylesheet" href="assets/css/animated.css">
+     
+    <link rel="stylesheet" href="assets/css/owl.css">
+     
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
+
+      <style>
+        /* สไตล์เพิ่มเติมเฉพาะหน้านี้ */
+        .page-heading-new {
+            background: linear-gradient(135deg, #2b3990 0%, #1a235a 100%);
+            padding: 160px 0 100px 0;
+            color: #fff;
+            text-align: center;
+            position: relative;
+        }
+
+        .stock-card {
+            background: #fff;
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+            border: none;
+            transition: transform 0.3s;
+            margin-bottom: 30px;
+        }
+
+        .stock-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .info-label {
+            color: #888;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .info-value {
+            color: #2b3990;
+            font-weight: 700;
+            font-size: 18px;
+        }
+
+        .read-more-btn {
+            display: inline-block;
+            background: #2b3990;
+            color: #fff !important;
+            padding: 12px 30px;
+            border-radius: 30px;
+            font-weight: 600;
+            transition: 0.3s;
+            margin-top: 20px;
+            box-shadow: 0 5px 15px rgba(43, 57, 144, 0.3);
+        }
+
+        .read-more-btn:hover {
+            background: #ff581f;
+            /* สีส้มตัดกับสีน้ำเงิน */
+            transform: scale(1.05);
+        }
+
+        .divider-custom {
+            width: 60px;
+            height: 4px;
+            background: #ff581f;
+            margin: 15px auto;
+            border-radius: 2px;
+        }
+
+        /* Document Card Style */
+        .document-card {
+            background: #fff;
+            border-radius: 15px;
+            padding: 25px;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+            border-left: 5px solid #eee;
+            transition: all 0.3s ease;
+        }
+
+        .document-card:hover {
+            transform: translateX(10px);
+            border-left-color: #2b3990;
+            box-shadow: 0 10px 25px rgba(43, 57, 144, 0.1);
+        }
+
+        .document-card.new-arrival {
+            border-left-color: #ff581f;
+        }
+
+        /* Icon Section */
+        .doc-icon {
+            width: 70px;
+            height: 70px;
+            background: #fff0eb;
+            color: #ff581f;
+            border-radius: 12px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin-right: 25px;
+            flex-shrink: 0;
+        }
+
+        .doc-icon i {
+            font-size: 24px;
+        }
+
+        .doc-icon .file-type {
+            font-size: 10px;
+            font-weight: 800;
+            margin-top: 2px;
+        }
+
+        .doc-icon.archive {
+            background: #eef1ff;
+            color: #2b3990;
+        }
+
+        /* Info Section */
+        .doc-info {
+            flex-grow: 1;
+        }
+
+        .doc-info h4 {
+            font-size: 18px;
+            font-weight: 600;
+            color: #1a235a;
+            margin-bottom: 8px;
+        }
+
+        .doc-info .date {
+            font-size: 14px;
+            color: #888;
+        }
+
+        .badge-new {
+            display: inline-block;
+            background: #ff581f;
+            color: #fff;
+            font-size: 10px;
+            padding: 2px 10px;
+            border-radius: 50px;
+            font-weight: 700;
+            margin-bottom: 5px;
+        }
+
+        /* Download Button */
+        .download-btn {
+            background: #2b3990;
+            color: #fff !important;
+            padding: 10px 25px;
+            border-radius: 50px;
+            font-weight: 500;
+            text-decoration: none;
+            transition: 0.3s;
+            white-space: nowrap;
+        }
+
+        .download-btn:hover {
+            background: #ff581f;
+            box-shadow: 0 5px 15px rgba(255, 88, 31, 0.3);
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .document-card {
+                flex-direction: column;
+                text-align: center;
+                padding: 20px;
+            }
+
+            .doc-icon {
+                margin: 0 0 15px 0;
+            }
+
+            .doc-action {
+                margin-top: 20px;
+                width: 100%;
+            }
+
+            .download-btn {
+                display: block;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header class="header-area header-sticky wow slideInDown" data-wow-duration="0.75s" data-wow-delay="0s">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <nav class="main-nav">
+                        <a href="index.html" class="logo">
+                            <img src="assets/images/logo2.png" style="width: 50%;" alt="Rodtank">
+                        </a>
+                        <ul class="nav">
+                            <li class="scroll-to-section"><a href="index.html">หน้าแรก</a></li>
+                            <li class="scroll-to-section has-dropdown">
+                                <a href="#" class="active">นักลงทุนสัมพันธ์ <i class="fa fa-angle-down"></i></a>
+                                <ul class="dropdown">
+                                    <li><a href="stock-info.html">ข้อมูลหลักทรัพย์</a></li>
+                                    <li><a href="stock-price.html">ราคาหุ้น</a></li>
+                                    <li><a href="financial-info.html">ข้อมูลสำคัญทางการเงิน</a></li>
+                                    <li><a href="news.html">ข่าวสาร</a></li>
+                                    <li><a href="publications.html">เอกสารเผยแพร่</a></li>
+                                </ul>
+                            </li>
+                            <li class="scroll-to-section"><a href="#contract">ติดต่อเรา</a></li>
+                            <li class="scroll-to-section"><a href="https://rodtank.com"><i
+                                        class="fa fa-shopping-bag"></i> สินค้าของเรา</a></li>
+                            <li>
+                                <div class="lang-switch">
+                                    <button class="lang-btn active" onclick="setLang('th')">TH</button>
+                                    <button class="lang-btn" onclick="setLang('en')">EN</button>
+                                </div>
+                            </li>
+                        </ul>
+                        <a class='menu-trigger'><span>Menu</span></a>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="page-heading-new">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h2 data-th="เอกสารเผยแพร่" data-en="Publications">เอกสารเผยแพร่</h2>
+                    <div class="divider-custom"></div>
+                    <p data-th="บริษัท เค.ซี.เมททอลชีท จำกัด (มหาชน)" data-en="K.C. Metalsheet Public Company Limited">
+                        บริษัท เค.ซี.เมททอลชีท จำกัด (มหาชน)
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="publications-section mt-5 mb-5">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-10">
+
+                    <div class="document-card new-arrival">
+                        <div class="doc-icon">
+                            <i class="far fa-file-pdf"></i>
+                            <span class="file-type">PDF</span>
+                        </div>
+                        <div class="doc-info">
+                            <div class="badge-new" data-th="ใหม่" data-en="NEW">ใหม่</div>
+                            <h4 data-th="หนังสือเชิญประชุมสามัญผู้ถือหุ้นประจำปี 2568" data-en="Notice of the 2025 AGM">
+                                หนังสือเชิญประชุมสามัญผู้ถือหุ้นประจำปี 2568
+                            </h4>
+                            <span class="date"><i class="far fa-calendar-alt me-2"></i>28 เมษายน 2568</span>
+                        </div>
+                        <div class="doc-action">
+                            <a href="assets/files/kcm_shareholders_meeting_invite_2025.pdf" target="_blank"
+                                class="download-btn">
+                                <span data-th="ดาวน์โหลด" data-en="Download">ดาวน์โหลด</span>
+                                <i class="fa fa-download"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="document-card new-arrival">
+                        <div class="doc-icon">
+                            <i class="far fa-file-pdf"></i>
+                            <span class="file-type">PDF</span>
+                        </div>
+                        <div class="doc-info">
+                            <div class="badge-new" data-th="ใหม่" data-en="NEW">ใหม่</div>
+                            <h4 data-th="รายงานประจำปี 2567" data-en="Annual Report 2024">
+                                รายงานประจำปี 2567
+                            </h4>
+                            <span class="date"><i class="far fa-calendar-alt me-2"></i>31 ธันวาคม 2567</span>
+                        </div>
+                        <div class="doc-action">
+                            <a href="assets/images/kcm_report_2025.pdf" target="_blank" class="download-btn">
+                                <span data-th="ดาวน์โหลด" data-en="Download">ดาวน์โหลด</span>
+                                <i class="fa fa-download"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="document-card">
+                        <div class="doc-icon archive">
+                            <i class="far fa-file-archive"></i>
+                            <span class="file-type">RAR</span>
+                        </div>
+                        <div class="doc-info">
+                            <h4 data-th="เอกสารสำหรับการเสนอชื่อกรรมการ" data-en="Director Nomination Documents">
+                                เอกสารสำหรับการเสนอชื่อกรรมการ
+                            </h4>
+                            <span class="date"><i class="far fa-calendar-alt me-2"></i>10 ธันวาคม 2024</span>
+                        </div>
+                        <div class="doc-action">
+                            <a href="https://drive.google.com/file/d/1LC_XGiJnFh-nPA_5vGzepf-_GiIljHcE/view"
+                                target="_blank" class="download-btn">
+                                <span data-th="ดาวน์โหลด" data-en="Download">ดาวน์โหลด</span>
+                                <i class="fa fa-download"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="document-card">
+                        <div class="doc-icon">
+                            <i class="far fa-file-pdf"></i>
+                            <span class="file-type">PDF</span>
+                        </div>
+                        <div class="doc-info">
+                            <h4 data-th="คำแนะนำและระเบียบการประชุมสามัญ" data-en="Guidelines for General Meetings">
+                                คำแนะนำและระเบียบการประชุมสามัญ
+                            </h4>
+                            <span class="date"><i class="far fa-calendar-alt me-2"></i>10 ธันวาคม 2024</span>
+                        </div>
+                        <div class="doc-action">
+                            <a href="https://drive.google.com/file/d/1_MdF6KVx25KCn16-PhTpGUb-ASD_XikA/view"
+                                target="_blank" class="download-btn">
+                                <span data-th="ดาวน์โหลด" data-en="Download">ดาวน์โหลด</span>
+                                <i class="fa fa-download"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer id="newsletter">
+        <div class="container">
+            <!-- <div class="row">
+        <div class="col-lg-8 offset-lg-2">
+          <div class="section-heading">
+            <h4>Join our mailing list to receive the news &amp; latest trends</h4>
+          </div>
+        </div>
+        <div class="col-lg-6 offset-lg-3">
+          <form id="search" action="#" method="GET">
+            <div class="row">
+              <div class="col-lg-6 col-sm-6">
+                <fieldset>
+                  <input type="address" name="address" class="email" placeholder="Email Address..." autocomplete="on" required>
+                </fieldset>
+              </div>
+              <div class="col-lg-6 col-sm-6">
+                <fieldset>
+                  <button type="submit" class="main-button">Subscribe Now <i class="fa fa-angle-right"></i></button>
+                </fieldset>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div> -->
+            <div class="row">
+                <div class="col-lg-3">
+                    <div class="footer-widget">
+                        <h4 data-th="ติดต่อเรา" data-en="Contact Us">ติดต่อเรา</h4>
+                        <p style="color:rgb(251, 249, 249);"
+                            data-th="567 หมู่ 2 ถ.เลี่ยงเมือง ต.พระลับ อ.เมือง จ.ขอนแก่น 40000"
+                            data-en="567 Moo 2, Bypass Road, Phra Lap, Mueang, Khon Kaen 40000">
+                            567 หมู่ 2 ถ.เลี่ยงเมือง ต.พระลับ อ.เมือง จ.ขอนแก่น 40000
+                        </p>
+                        <p><a href="#">043-306999</a></p>
+                        <p><a href="#">kcm@kcmetalsheet.com </a></p>
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <div class="footer-widget">
+                        <!-- <h4>About Us</h4>
+            <ul>
+              <li><a href="#">Home</a></li>
+              <li><a href="#">Services</a></li>
+              <li><a href="#">About</a></li>
+              <li><a href="#">Testimonials</a></li>
+              <li><a href="#">Pricing</a></li>
+            </ul>
+            <ul>
+              <li><a href="#">About</a></li>
+              <li><a href="#">Testimonials</a></li>
+              <li><a href="#">Pricing</a></li>
+            </ul> -->
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <div class="footer-widget">
+                        <h4 data-th="ลิงก์ที่เป็นประโยชน์" data-en="Useful Links">ลิงก์ที่เป็นประโยชน์</h4>
+                        <ul>
+                            <li>
+                                <a href="ksee/privacy-policy.html">
+                                    <span data-th="นโยบายความเป็นส่วนตัว Ksee"
+                                        data-en="Ksee Privacy Policy">นโยบายความเป็นส่วนตัว
+                                        Ksee</span>
+                                </a>
+                            </li>
+                        </ul>
+                        <li><a href="#"></a></li>
+                        <li><a href="#"></a></li>
+                        <li><a href="#"></a></li>
+                        <li><a href="#"> </a></li>
+                        </ul>
+
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <div class="footer-widget">
+                        <h4 data-th="เกี่ยวกับบริษัทเรา" data-en="About Our Company">About Our Company</h4>
+                        <div class="logo">
+                            <img src="assets/images/white-logo2.png" alt="">
+                        </div>
+                        <p data-th="มุ่งมั่นเป็นผู้นำด้านการผลิต จำหน่ายและบริการ ผลิตภัณฑ์โครงสร้างอาคารเหล็กสำเร็จรูป (Steel Building Solution) 
+            ตลอดจนอุปกรณ์ติดตั้ง เพื่อตอบสนองความต้องการของลูกค้า พร้อมสร้างความประทับใจ และมีส่วนร่วมกับความสำเร็จของลูกค้า 
+            ด้วยการปรับปรุงและพัฒนากระบวนการปฏิบัติงานอย่างต่อเนื่อง"
+                            data-en="Committed to being a leader in the production, distribution, and service of Steel Building Solution products and installation accessories. We aim to meet all customer needs, creating impressive experiences and contributing to our customers' success through continuous improvement and development of our operational processes.">
+                            มุ่งมั่นเป็นผู้นำด้านการผลิต จำหน่ายและบริการ ผลิตภัณฑ์โครงสร้างอาคารเหล็กสำเร็จรูป (Steel
+                            Building
+                            Solution)
+                            ตลอดจนอุปกรณ์ติดตั้ง เพื่อตอบสนองความต้องการของลูกค้า พร้อมสร้างความประทับใจ
+                            และมีส่วนร่วมกับความสำเร็จของลูกค้า
+                            ด้วยการปรับปรุงและพัฒนากระบวนการปฏิบัติงานอย่างต่อเนื่อง
+                        </p>
+                    </div>
+                </div>
+                <div class="col-lg-12">
+                    <div class="copyright-text">
+                        <p>Copyright © 2024 | Powered by Rodtank.
+                            <!-- <br>Design: <a href="https://templatemo.com/" target="_blank" title="css templates">TemplateMo</a></p> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/custom.js"></script>
+    <script src="assets/js/language-switch.js"></script>
+</body>
+
+</html>
