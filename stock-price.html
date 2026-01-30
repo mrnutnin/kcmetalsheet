@@ -82,6 +82,8 @@
             margin: 15px auto;
             border-radius: 2px;
         }
+        .status-up { color: #28a745; }   /* สีเขียว */
+.status-down { color: #dc3545; } /* สีแดง */
     </style>
 </head>
 
@@ -134,73 +136,72 @@
         </div>
     </div>
 
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-lg-10">
-                <div class="price-card">
-                    <div class="row align-items-center">
-                        <div class="col-md-6 border-end text-center">
-                            <h6 class="text-muted mb-2" data-th="ราคาล่าสุด (KCM)" data-en="Last Price (KCM)">ราคาล่าสุด
-                                (KCM)</h6>
-                            <div class="stock-value">0.45</div>
-                            <div class="mt-2 font-weight-bold status-up">
-                                <i class="fas fa-caret-up"></i> +0.01 (+2.27%)
-                            </div>
-                        </div>
-                        <div class="col-md-6 ps-md-5">
-                            <div class="mb-2">
-                                <span class="text-muted" data-th="เปิด:" data-en="Open:">เปิด:</span>
-                                <strong>0.44</strong>
-                            </div>
-                            <div class="mb-2">
-                                <span class="text-muted" data-th="สูงสุด:" data-en="High:">สูงสุด:</span>
-                                <strong>0.46</strong>
-                            </div>
-                            <div class="mb-2">
-                                <span class="text-muted" data-th="ต่ำสุด:" data-en="Low:">ต่ำสุด:</span>
-                                <strong>0.44</strong>
-                            </div>
-                            <div class="mb-2">
-                                <span class="text-muted" data-th="ปริมาณการซื้อขาย:"
-                                    data-en="Volume:">ปริมาณการซื้อขาย:</span> <strong>1.2M</strong>
-                            </div>
+  <div class="container">
+    <div class="row justify-content-center">
+        <div class="col-lg-10">
+            <div class="price-card">
+                <div class="row align-items-center">
+                    <div class="col-md-6 border-end text-center">
+                        <h6 class="text-muted mb-2" data-th="ราคาล่าสุด (KCM)" data-en="Last Price (KCM)">ราคาล่าสุด (KCM)</h6>
+                        <div class="stock-value">0.38</div> 
+                        <div class="mt-2 font-weight-bold status-down">
+                            <i class="fas fa-caret-down"></i> -0.01 (-2.56%)
                         </div>
                     </div>
-                    <div class="text-center mt-4">
-                        <a href="https://www.set.or.th/th/market/product/stock/quote/KCM/price" target="_blank"
-                            class="set-link-btn">
-                            <span data-th="ดูข้อมูลดิบจาก SET" data-en="View on SET">ดูข้อมูลดิบจาก SET</span> <i
-                                class="fa fa-external-link-alt ms-2"></i>
-                        </a>
+                    <div class="col-md-6 ps-md-5">
+                        <div class="mb-2">
+                            <span class="text-muted" data-th="เปิด:" data-en="Open:">เปิด:</span>
+                            <strong>0.39</strong>
+                        </div>
+                        <div class="mb-2">
+                            <span class="text-muted" data-th="สูงสุด:" data-en="High:">สูงสุด:</span>
+                            <strong>0.39</strong>
+                        </div>
+                        <div class="mb-2">
+                            <span class="text-muted" data-th="ต่ำสุด:" data-en="Low:">ต่ำสุด:</span>
+                            <strong>0.38</strong>
+                        </div>
+                        <div class="mb-2">
+                            <span class="text-muted" data-th="ปริมาณการซื้อขาย:" data-en="Volume:">ปริมาณการซื้อขาย:</span> 
+                            <strong>2.45M</strong>
+                        </div>
                     </div>
                 </div>
+                <div class="text-center mt-4">
+                    <a href="https://www.set.or.th/th/market/product/stock/quote/KCM/price" target="_blank" class="set-link-btn">
+                        <span data-th="ดูข้อมูล Real-time จาก SET" data-en="View Real-time on SET">ดูข้อมูล Real-time จาก SET</span> 
+                        <i class="fa fa-external-link-alt ms-2"></i>
+                    </a>
+                </div>
+            </div>
 
-                <div class="chart-container">
-                    <h5 class="mb-4" data-th="กราฟราคาหุ้น" data-en="Stock Chart"><i class="fas fa-chart-line me-2"></i>
-                        กราฟราคาหุ้น</h5>
-                    <div class="tradingview-widget-container" style="height: 500px;">
-                        <div id="tradingview_kcm"></div>
-                        <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
-                        <script type="text/javascript">
-                            new TradingView.widget({
-                                "autosize": true,
-                                "symbol": "SET:KCM",
-                                "interval": "D",
-                                "timezone": "Asia/Bangkok",
-                                "theme": "light",
-                                "style": "3",
-                                "locale": "th",
-                                "toolbar_bg": "#f1f3f6",
-                                "enable_publishing": false,
-                                "allow_symbol_change": true,
-                                "container_id": "tradingview_kcm"
-                            });
-                        </script>
-                    </div>
+            <div class="chart-container">
+                <h5 class="mb-4" data-th="กราฟราคาหุ้น" data-en="Stock Chart">
+                    <i class="fas fa-chart-line me-2"></i> กราฟราคาหุ้น
+                </h5>
+                <div class="tradingview-widget-container" style="height: 500px;">
+                    <div id="tradingview_kcm"></div>
+                    <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
+                    <script type="text/javascript">
+                        new TradingView.widget({
+                            "autosize": true,
+                            "symbol": "SET:KCM",
+                            "interval": "D",
+                            "timezone": "Asia/Bangkok",
+                            "theme": "light",
+                            "style": "1", // เปลี่ยนเป็นสไตล์ Candlesticks เพื่อความชัดเจน
+                            "locale": "th",
+                            "toolbar_bg": "#f1f3f6",
+                            "enable_publishing": false,
+                            "allow_symbol_change": true,
+                            "container_id": "tradingview_kcm"
+                        });
+                    </script>
                 </div>
             </div>
         </div>
     </div>
+</div>
 
     <footer id="newsletter">
         <div class="container">
