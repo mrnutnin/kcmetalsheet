@@ -2752,7 +2752,7 @@ img {
 
 /* 1. กล่องพื้นหลังใหญ่ */
 .ceo-highlight-section {
-  background: linear-gradient(135deg, #88C1B1 0%, #5E9A8E 100%);
+  background: linear-gradient(rgba(74, 132, 214, 0.85));
 
   /* [จุดแก้ 1] ลดความสูงของกล่อง (จาก 80px เหลือ 40-50px) */
   padding: 50px 40px;
