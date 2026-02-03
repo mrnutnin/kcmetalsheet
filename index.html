@@ -34,12 +34,207 @@ https://templatemo.com/tm-570-chain-app-dev
   <link rel="stylesheet" href="assets/css/templatemo-chain-app-dev.css">
   <link rel="stylesheet" href="assets/css/animated.css">
   <link rel="stylesheet" href="assets/css/owl.css">
-
-
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css"
     integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <style>
+    :root {
+       --primary-color: rgba(74, 132, 214, 0.85);
 
+  /* ฟ้าอ่อน ไล่ลงมา (โซนคลื่น / กลางภาพ) */
+  --secondary-color: rgba(168, 203, 242, 0.7);
+
+  /* สีตัวอักษร */
+  --text-dark: #2f3a4a;
+
+  /* ขาวอมฟ้า (พื้นล่างของภาพ) */
+  --white: #f3f7fc;
+    }
+
+    body {
+      font-family: 'Kanit', sans-serif;
+      background-color: var(--white);
+    }
+
+    /* ปรับแต่ง Banner ให้มีส่วนโค้งเหมือนในรูป */
+    .main-banner {
+      background-color: var(--primary-color);
+      border-bottom-left-radius: 80px;
+      border-bottom-right-radius: 80px;
+      padding: 150px 0 100px 0;
+      color: var(--white);
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* ตกแต่งหัวข้อ */
+    .section-heading h4 {
+      color: var(--primary-color);
+      font-weight: 700;
+      font-size: 32px;
+      margin-bottom: 20px;
+    }
+
+    .header-text h4 {
+      color: var(--white) !important;
+    }
+
+    /* สไตล์ปุ่มแบบมน (Rounded Pill) */
+    .white-button a {
+      color: var(--primary-color) !important;
+      border-radius: 50px !important;
+      padding: 12px 30px !important;
+      font-weight: 500;
+      transition: all 0.3s;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    .white-button a:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+    }
+
+    /* Card สไตล์แอปมือถือ */
+    .service-item {
+      border-radius: 30px !important;
+      background: var(--white);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05) !important;
+      border: none !important;
+      padding: 40px 30px !important;
+      transition: 0.4s;
+    }
+
+    .service-item:hover {
+      transform: scale(1.05);
+    }
+
+    /* ปรับแต่ง Navbar */
+    .header-area {
+      background-color: rgba(126, 86, 202, 0.411);
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    }
+
+    .main-nav .nav li a {
+      color: var(--text-dark) !important;
+    }
+
+    .main-nav .nav li a.active,
+    .main-nav .nav li a:hover {
+      color: var(--primary-color) !important;
+    }
+
+    /* รูปภาพโทรศัพท์/สินค้า ให้ดูนูนและมน */
+    .right-image img {
+      border-radius: 40px !important;
+      box-shadow: 20px 20px 60px rgba(0, 0, 0, 0.1);
+      border: 8px solid #333 !important;
+      /* ให้ดูเหมือนขอบมือถือ */
+    }
+
+    .main-banner {
+      background-color: var(--primary-color);
+      /* เพิ่ม Padding ด้านล่างเยอะหน่อย เพื่อให้มีพื้นที่สำหรับส่วนโค้ง */
+      padding: 160px 0 220px 0;
+      color: var(--white);
+      position: relative;
+
+      /* เทคนิคทำโค้งนูนลงด้านล่าง (Convex) */
+      /* ตัวเลข 50% คือความกว้างของโค้ง, 100px คือความลึกของโค้ง */
+      border-bottom-left-radius: 50% 100px;
+      border-bottom-right-radius: 50% 100px;
+
+      /* ป้องกันไม่ให้มีขอบขาวแลบ */
+      overflow: hidden;
+      z-index: 1;
+    }
+
+    /* ลบ ::after แบบเก่าทิ้งไปเลยครับ ไม่ต้องใช้แล้ว */
+    .main-banner::after {
+      display: none;
+    }
+
+    /* คอนเทนเนอร์สำหรับจัดวางเลเยอร์รูปภาพ */
+    .layered-image-container {
+      position: relative;
+      display: block;
+      width: 100%;
+      /* เพิ่มความสูงเพื่อให้มีพื้นที่สำหรับภาพที่วางเหลื่อมกัน */
+      height: 650px;
+      pointer-events: none;
+      /* จัดให้อยู่กึ่งกลางคอนเทนเนอร์ */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    /* สไตล์พื้นฐานสำหรับรูปภาพทั้งสอง */
+    .layered-image-container img {
+      position: absolute;
+      border-radius: 35px;
+      border: 8px solid #1a1a1a;
+      box-shadow: 0 25px 50px rgba(0, 0, 0, 0.25);
+      transition: all 0.4s ease-out;
+      /* ปรับการเคลื่อนไหวให้นุ่มนวลขึ้น */
+
+      /* กำหนดขนาดให้เท่ากัน */
+      height: 550px;
+      /* ความสูงเท่าเดิม */
+      width: 280px;
+      /* 1. กำหนดความกว้างตายตัว (ลองปรับเลขนี้ได้ถ้าเล็ก/ใหญ่ไป) */
+      object-fit: cover;
+      /* 2. สั่งให้ตัดภาพส่วนเกินออก เพื่อไม่ให้ภาพบีบจนเพี้ยน */
+      object-position: top center;
+    }
+
+    /* รูปภาพด้านหลัง (Back Image) - อยู่ทางซ้าย */
+    .back-img {
+      z-index: 1;
+      opacity: 0.85;
+      /* ปรับให้ชัดขึ้นเพื่อให้ดูเป็นธรรมชาติ */
+      /* จัดตำแหน่งให้อยู่ตรงกลางแล้วเลื่อนไปทางซ้าย */
+      left: 50%;
+      top: 50%;
+      /* เลื่อนไปทางซ้าย 60% ของความกว้างตัวเอง และขยับลงนิดหน่อย */
+      transform: translate(-60%, -45%);
+    }
+
+    /* รูปภาพด้านหน้า (Front Image) - อยู่ทางขวา */
+    .front-img {
+      z-index: 2;
+      /* จัดตำแหน่งให้อยู่ตรงกลางแล้วเลื่อนไปทางขวา */
+      left: 50%;
+      top: 50%;
+      /* เลื่อนไปทางขวา 40% ของความกว้างตัวเอง และขยับขึ้นนิดหน่อย */
+      transform: translate(-5%, -45%);
+    }
+
+    .right-image:hover .back-img {
+      /* ขยับลงและไปทางซ้ายเพิ่มอีกนิด */
+      transform: translate(-65%, -40%);
+      opacity: 1;
+    }
+
+    .right-image {
+      /* เพิ่มระยะห่างด้านซ้าย เพื่อดันรูปหนีจากข้อความ */
+      padding-left: 90px;
+    }
+
+    .layered-image-container {
+      pointer-events: auto !important;
+      position: relative !important;
+      z-index: 99999 !important;
+    }
+
+
+    @media (max-width: 991px) {
+      .right-image {
+        padding-left: 0;
+        /* ในมือถือให้กลับมาชิดซ้ายเหมือนเดิม */
+        margin-top: 50px;
+        /* เพิ่มระยะห่างด้านบนแทน */
+      }
+    }
+  </style>
 </head>
 
 <body>
@@ -100,75 +295,56 @@ https://templatemo.com/tm-570-chain-app-dev
   </header>
   <!-- ***** Header Area End ***** -->
 
-  
-  <div class="main-banner wow fadeIn" id="top" data-wow-duration="1s" data-wow-delay="0.5s">
+  <div class="main-banner wow fadeIn" id="top">
     <div class="container">
       <div class="row">
-        <div class="col-lg-12">
-          <div class="row">
-            <div class="col-lg-6 align-self-center">
-              <div class="left-content show-up header-text wow fadeInLeft" data-wow-duration="1s" data-wow-delay="1s">
-                <div class="row">
-                  <div class="col-lg-12 section-heading">
-                    <h4 data-th="บริษัท เค.ซี.เมททอลชีท จำกัด (มหาชน)" data-en="K.C. Metalsheet Public Company Limited">
-                      บริษัท เค.ซี.เมททอลชีท จำกัด (มหาชน)
-                    </h4>
-                    <p data-th="บริษัทประกอบธุรกิจขึ้นรูปแผ่นเหล็กตามรูปแบบและขนาดตามความต้องการของลูกค้าสำหรับใช้เป็นแผ่นหลังคาและผนังเหล็ก
-                       รวมทั้งขึ้นรูปชิ้นงานเหล็กกล้าสำเร็จรูปสำหรับงานโครงสร้างหลังคาและผนัง ภายใต้เครื่องหมายการค้าจดทะเบียน รถถัง(TANK) 
-                       ซึ่งใช้วัตถุดิบแผ่นเหล็กเคลือบสังกะสีและอลูมิเนียมคุณภาพสูงผลิตจากเทคโนโลยีจากประเทศออสเตรเลีย และเครื่องหมายการค้า คอมมานโด (Commando) 
-                       ซึ่งใช้วัตถุดิบแผ่นเหล็กเคลือบสังกะสีและอลูมิเนียมคุณภาพสูงผลิตจากเทคโนโลยีจากประเทศอื่น และให้บริการงานออกแบบและติดตั้งงานโครงสร้างเหล็กกล้าสำเร็จรูปสำหรับอาคารสิ่งปลูกสร้างแบบครบวงจร
-                      และงานติดตั้งแผ่นหลังคาและผนังเหล็ก" data-en="The company operates a business specializing in forming steel sheets according to customers’ 
-                      required designs and dimensions for use as roofing and steel wall panels. It also manufactures prefabricated steel 
-                      components for roofing and wall structures under the registered trademark TANK, using high-quality zinc- and aluminum-coated 
-                      steel sheets produced with Australian technology, as well as under the trademark Commando, which uses high-quality zinc- and aluminum-coated steel sheets 
-                      produced with technology from other countries. In addition, the company provides comprehensive services in the design and installation of prefabricated 
-                      steel structures for buildings, including the installation of steel roofing and wall panels.">
-                      บริษัทประกอบธุรกิจขึ้นรูปแผ่นเหล็กตามรูปแบบและขนาดตามความต้องการของลูกค้าสำหรับใช้เป็นแผ่นหลังคาและผนังเหล็ก
-                      รวมทั้งขึ้นรูปชิ้นงานเหล็กกล้าสำเร็จรูปสำหรับงานโครงสร้างหลังคาและผนัง
-                      ภายใต้เครื่องหมายการค้าจดทะเบียน รถถัง(TANK)
-                      ซึ่งใช้วัตถุดิบแผ่นเหล็กเคลือบสังกะสีและอลูมิเนียมคุณภาพสูงผลิตจากเทคโนโลยีจากประเทศออสเตรเลีย
-                      และเครื่องหมายการค้า คอมมานโด (Commando)
-                      ซึ่งใช้วัตถุดิบแผ่นเหล็กเคลือบสังกะสีและอลูมิเนียมคุณภาพสูงผลิตจากเทคโนโลยีจากประเทศอื่น
-                      และให้บริการงานออกแบบและติดตั้งงานโครงสร้างเหล็กกล้าสำเร็จรูปสำหรับอาคารสิ่งปลูกสร้างแบบครบวงจร
-                      และงานติดตั้งแผ่นหลังคาและผนังเหล็ก
-                    </p>
-
-                  </div>
-                  <div class="col-lg-12">
-                    <div class="white-button first-button scroll-to-section">
-                      <a style="background-color: #232262;" href="https://rodtank.com"><span data-th="ดูสินค้าของเรา"
-                          data-en="View Our Products">ดูสินค้าของเรา</span>
-                        <i class="fas fa-store"></i></a>
-                    </div>
-                    <!-- <div class="white-button first-button scroll-to-section">
-                      <a href="#contact">Free Quote <i class="fab fa-apple"></i></a>
-                    </div>
-                    <div class="white-button scroll-to-section">
-                      <a href="#contact">Free Quote <i class="fab fa-google-play"></i></a>
-                    </div> -->
-                  </div>
-                </div>
-              </div>
+        <div class="col-lg-6 align-self-center">
+          <div class="left-content header-text">
+            <h4 data-th="บริษัท เค.ซี.เมททอลชีท จำกัด (มหาชน)" data-en="K.C. Metalsheet">
+              K.C. METALSHEET
+            </h4>
+            <h2 style="font-weight: 800; font-size: 3rem; margin-bottom: 20px;"
+              data-th="วัสดุก่อสร้างคุณภาพ เพื่ออนาคตที่ยั่งยืน"
+              data-en="Quality Construction Materials for a Sustainable Future">
+              วัสดุก่อสร้างคุณภาพ เพื่ออนาคตที่ยั่งยืน
+            </h2>
+            <p style="color: rgba(255,255,255,0.9);" data-th="บริษัทประกอบธุรกิจขึ้นรูปแผ่นเหล็กตามรูปแบบและขนาดตามความต้องการของลูกค้าสำหรับใช้เป็นแผ่นหลังคาและผนังเหล็ก
+            รวมทั้งขึ้นรูปชิ้นงานเหล็กกล้าสำเร็จรูปสำหรับงานโครงสร้างหลังคาและผนัง ภายใต้เครื่องหมายการค้าจดทะเบียน รถถัง(TANK) 
+            ซึ่งใช้วัตถุดิบแผ่นเหล็กเคลือบสังกะสีและอลูมิเนียมคุณภาพสูงผลิตจากเทคโนโลยีจากประเทศออสเตรเลีย และเครื่องหมายการค้า คอมมานโด (Commando) 
+            ซึ่งใช้วัตถุดิบแผ่นเหล็กเคลือบสังกะสีและอลูมิเนียมคุณภาพสูงผลิตจากเทคโนโลยีจากประเทศอื่น และให้บริการงานออกแบบและติดตั้งงานโครงสร้างเหล็กกล้าสำเร็จรูปสำหรับอาคารสิ่งปลูกสร้างแบบครบวงจร
+            และงานติดตั้งแผ่นหลังคาและผนังเหล็ก" data-en="The company operates a business specializing in forming steel sheets according to customers’ 
+            required designs and dimensions for use as roofing and steel wall panels. It also manufactures prefabricated steel 
+            components for roofing and wall structures under the registered trademark TANK, using high-quality zinc- and aluminum-coated 
+            steel sheets produced with Australian technology, as well as under the trademark Commando, which uses high-quality zinc- and aluminum-coated steel sheets 
+            produced with technology from other countries. In addition, the company provides comprehensive services in the design and installation of prefabricated 
+            steel structures for buildings, including the installation of steel roofing and wall panels.">
+              บริษัทประกอบธุรกิจขึ้นรูปแผ่นเหล็กตามรูปแบบและขนาดตามความต้องการของลูกค้าสำหรับใช้เป็นแผ่นหลังคาและผนังเหล็ก
+              รวมทั้งขึ้นรูปชิ้นงานเหล็กกล้าสำเร็จรูปสำหรับงานโครงสร้างหลังคาและผนัง
+              ภายใต้เครื่องหมายการค้าจดทะเบียน รถถัง(TANK)
+              ซึ่งใช้วัตถุดิบแผ่นเหล็กเคลือบสังกะสีและอลูมิเนียมคุณภาพสูงผลิตจากเทคโนโลยีจากประเทศออสเตรเลีย
+              และเครื่องหมายการค้า คอมมานโด (Commando)
+              ซึ่งใช้วัตถุดิบแผ่นเหล็กเคลือบสังกะสีและอลูมิเนียมคุณภาพสูงผลิตจากเทคโนโลยีจากประเทศอื่น
+              และให้บริการงานออกแบบและติดตั้งงานโครงสร้างเหล็กกล้าสำเร็จรูปสำหรับอาคารสิ่งปลูกสร้างแบบครบวงจร
+              และงานติดตั้งแผ่นหลังคาและผนังเหล็ก
+            </p>
+            <div class="white-button mt-4">
+              <a style="background-color: #232262;" href="https://rodtank.com"><span data-th="ดูสินค้าของเรา"
+                  data-en="View Our Products">ดูสินค้าของเรา</span>
+                <i class="fas fa-store"></i></a>
             </div>
-            <div class="col-lg-2">
-
-            </div>
-            <div class="col-lg-4">
-              <div class="right-image wow fadeInRight" data-wow-duration="1s" data-wow-delay="0.5s">
-                <a href="https://rodtank.com">
-                  <!-- <img src="assets/images/iphone.png" style="width: 50%;" alt=""> -->
-                  <div style="pointer-events: none;">
-                    <img src="assets/images/web_rodtank.png" loading="lazy" height="600" width="40%"
-                      style="border: 5px solid #000; border-radius: 15px; transform: scale(0.9);"
-                      title="rodtank.com"></img>
-                  </div>
-                </a>
-              </div>
-            </div>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="right-image wow fadeInRight" data-wow-duration="1s" data-wow-delay="0.5s">
+            <a href="https://rodtank.com" target="_blank" class="layered-image-container"><img
+                src="assets/images/web_rodtank.png" loading="lazy" class="back-img" alt="Company Profile Back">
+              <img src="assets/images/company profile.png" loading="lazy" class="front-img" alt="Company Profile Front">
+            </a>
           </div>
         </div>
       </div>
     </div>
+  </div>
   </div>
 
   <div id="services" class="services section">
@@ -287,7 +463,6 @@ https://templatemo.com/tm-570-chain-app-dev
           <div class="section-heading">
             <h4 data-th="เอกสารเผยแพร่" data-en="Publications">เอกสารเผยแพร่</h4>
             <img src="assets/images/heading-line-dec.png" alt="">
-            </p>
           </div>
         </div>
         <div class="col-lg-12">
@@ -297,62 +472,20 @@ https://templatemo.com/tm-570-chain-app-dev
                 <div class="col-lg-8 align-self-center">
                   <div class="menu">
 
-
                     <div class="first-thumb active">
                       <div class="thumb">
                         <div class="row">
-                          <div class="col-lg-4 col-sm-4 col-20">
-                            <h4>
-                              <span data-th="หนังสือเชิญประชุมสามัญผู้ถือหุ้นประจำปี 2568"
-                                data-en="Notice of the 2025 Annual General Meeting of Shareholders">
-                                หนังสือเชิญประชุมสามัญผู้ถือหุ้นประจำปี 2568
-                              </span>
-                              <span class="text-danger" data-th="NEW" data-en="NEW">NEW</span>
-                            </h4>
-
-                            <span class="date" data-th="28 เมษายน 2568" data-en="28 April 2025">
-                              28 เมษายน 2568
-                            </span>
-                          </div>
-
-                          <div class="col-lg-2 col-sm-2 d-none d-sm-block">
-                            <span class="category">PDF</span>
-                          </div>
-
                           <div class="col-lg-4 col-sm-4 col-12">
-                            <a target="_blank" href="assets/files/kcm_shareholders_meeting_invite_2025.pdf">
-                              <span data-th="ดาวน์โหลด" data-en="Download">ดาวน์โหลด</span>
-                              <i class="fa fa-download" aria-hidden="true"></i>
-                            </a>
+                            <h4><span data-th="หนังสือเชิญประชุมสามัญผู้ถือหุ้นประจำปี 2568"
+                                data-en="Notice of the 2025 AGM">หนังสือเชิญประชุมสามัญผู้ถือหุ้นประจำปี 2568</span>
+                              <span class="text-danger">NEW</span></h4>
+                            <span class="date">28 เมษายน 2568</span>
                           </div>
-                        </div>
-                      </div>
-                    </div>
-
-
-                    <div>
-                      <div class="thumb active">
-                        <div class="row">
+                          <div class="col-lg-2 col-sm-2 d-none d-sm-block"><span class="category">PDF</span></div>
                           <div class="col-lg-4 col-sm-4 col-12">
-                            <h4>
-                              <span data-th="รายงานประจำปี 2567" data-en="Annual Report 2024">รายงานประจำปี 2567</span>
-                              <span class="text-danger" data-th="NEW" data-en="NEW">NEW</span>
-                            </h4>
-
-                            <span class="date" data-th="31 ธันวาคม 2567" data-en="31 December 2024">
-                              31 ธันวาคม 2567
-                            </span>
-                          </div>
-
-                          <div class="col-lg-2 col-sm-2 d-none d-sm-block">
-                            <span class="category">PDF</span>
-                          </div>
-
-                          <div class="col-lg-4 col-sm-4 col-12">
-                            <a href="assets/images/kcm_report_2025.pdf">
-                              <span data-th="ดาวน์โหลด" data-en="Download">ดาวน์โหลด</span>
-                              <i class="fa fa-download" aria-hidden="true"></i>
-                            </a>
+                            <a target="_blank"
+                              href="assets/files/kcm_shareholders_meeting_invite_2025.pdf"><span>ดาวน์โหลด</span> <i
+                                class="fa fa-download"></i></a>
                           </div>
                         </div>
                       </div>
@@ -362,91 +495,63 @@ https://templatemo.com/tm-570-chain-app-dev
                       <div class="thumb active">
                         <div class="row">
                           <div class="col-lg-4 col-sm-4 col-12">
-                            <h4>
-                              <span data-th="เอกสารสำหรับการเสนอชื่อกรรมการ" data-en="Director Nomination Documents">
-                                เอกสารสำหรับการเสนอชื่อกรรมการ
-                              </span>
-                            </h4>
-
-                            <span class="date" data-th="10 ธันวาคม 2024" data-en="10 December 2024">
-                              10 ธันวาคม 2024
-                            </span>
+                            <h4><span data-th="รายงานประจำปี 2567" data-en="Annual Report 2024">รายงานประจำปี
+                                2567</span> <span class="text-danger">NEW</span></h4>
+                            <span class="date">31 ธันวาคม 2567</span>
                           </div>
-
-                          <div class="col-lg-2 col-sm-2 d-none d-sm-block">
-                            <span class="category">RAR</span>
+                          <div class="col-lg-2 col-sm-2 d-none d-sm-block"><span class="category">PDF</span></div>
+                          <div class="col-lg-4 col-sm-4 col-12">
+                            <a href="assets/images/kcm_report_2025.pdf"><span>ดาวน์โหลด</span> <i
+                                class="fa fa-download"></i></a>
                           </div>
+                        </div>
+                      </div>
+                    </div>
 
+                    <div>
+                      <div class="thumb active">
+                        <div class="row">
+                          <div class="col-lg-4 col-sm-4 col-12">
+                            <h4>เอกสารสำหรับการเสนอชื่อกรรมการ</h4>
+                            <span class="date">10 ธันวาคม 2024</span>
+                          </div>
+                          <div class="col-lg-2 col-sm-2 d-none d-sm-block"><span class="category">RAR</span></div>
                           <div class="col-lg-4 col-sm-4 col-12">
                             <a href="https://drive.google.com/file/d/1LC_XGiJnFh-nPA_5vGzepf-_GiIljHcE/view"
-                              target="_blank">
-                              <span data-th="ดาวน์โหลด" data-en="Download">ดาวน์โหลด</span>
-                              <i class="fa fa-download" aria-hidden="true"></i>
-                            </a>
+                              target="_blank"><span>ดาวน์โหลด</span> <i class="fa fa-download"></i></a>
                           </div>
                         </div>
                       </div>
                     </div>
-
 
                     <div>
                       <div class="thumb active">
                         <div class="row">
                           <div class="col-lg-4 col-sm-4 col-12">
-                            <h4>
-                              <span data-th="หลักเกณฑ์การเสนอชื่อกรรมการ" data-en="Criteria for Director Nomination">
-                                หลักเกณฑ์การเสนอชื่อกรรมการ
-                              </span>
-                            </h4>
-
-                            <span class="date" data-th="10 ธันวาคม 2024" data-en="10 December 2024">
-                              10 ธันวาคม 2024
-                            </span>
+                            <h4>หลักเกณฑ์การเสนอชื่อกรรมการ</h4>
+                            <span class="date">10 ธันวาคม 2024</span>
                           </div>
-
-                          <div class="col-lg-2 col-sm-2 d-none d-sm-block">
-                            <span class="category">RAR</span>
-                          </div>
-
+                          <div class="col-lg-2 col-sm-2 d-none d-sm-block"><span class="category">RAR</span></div>
                           <div class="col-lg-4 col-sm-4 col-12">
                             <a href="https://drive.google.com/file/d/1LC_XGiJnFh-nPA_5vGzepf-_GiIljHcE/view"
-                              target="_blank">
-                              <span data-th="ดาวน์โหลด" data-en="Download">ดาวน์โหลด</span>
-                              <i class="fa fa-download" aria-hidden="true"></i>
-                            </a>
+                              target="_blank"><span>ดาวน์โหลด</span> <i class="fa fa-download"></i></a>
                           </div>
                         </div>
                       </div>
                     </div>
-
-
 
                     <div class="last-thumb">
                       <div class="thumb active">
                         <div class="row">
                           <div class="col-lg-4 col-sm-4 col-12">
-                            <h4>
-                              <span data-th="คำแนะนำและระเบียบการประชุมสามัญ"
-                                data-en="Guidelines and Regulations for General Meetings">
-                                คำแนะนำและระเบียบการประชุมสามัญ
-                              </span>
-                            </h4>
-
-                            <span class="date" data-th="10 ธันวาคม 2024" data-en="10 December 2024">
-                              10 ธันวาคม 2024
-                            </span>
+                            <h4><span data-th="คำแนะนำและระเบียบการประชุมสามัญ"
+                                data-en="Guidelines and Regulations">คำแนะนำและระเบียบการประชุมสามัญ</span></h4>
+                            <span class="date">10 ธันวาคม 2024</span>
                           </div>
-
-                          <div class="col-lg-2 col-sm-2 d-none d-sm-block">
-                            <span class="category">PDF</span>
-                          </div>
-
+                          <div class="col-lg-2 col-sm-2 d-none d-sm-block"><span class="category">PDF</span></div>
                           <div class="col-lg-4 col-sm-4 col-12">
                             <a href="https://drive.google.com/file/d/1_MdF6KVx25KCn16-PhTpGUb-ASD_XikA/view"
-                              target="_blank">
-                              <span data-th="ดาวน์โหลด" data-en="Download">ดาวน์โหลด</span>
-                              <i class="fa fa-download" aria-hidden="true"></i>
-                            </a>
+                              target="_blank"><span>ดาวน์โหลด</span> <i class="fa fa-download"></i></a>
                           </div>
                         </div>
                       </div>
@@ -454,47 +559,12 @@ https://templatemo.com/tm-570-chain-app-dev
 
                   </div>
                 </div>
-                <div class="col-lg-4">
-                  <ul class="nacc">
-                    <li class="active">
-                      <div>
-                        <div class="thumb">
-                          <div class="row">
-                            <div class="col-lg-12">
-                              <div class="client-content">
-                                <img src="assets/images/quote.png" alt="">
-                                <p data-th="“เราไม่ได้จำหน่ายเพียง หลังคาเหล็กรีดลอน หรือ หลังคาเมทัลชีท อุปกรณ์ติดตั้ง และ 
-                          บริการติดตั้ง เท่านั้น ล่าสุดเรายังหาผลิตภัณฑ์ที่มีคุณค่าแก่ผู้ซื้อ ผู้ติดตั้งและผู้พักอาศัย อยู่เรื่อยมา เช่น 
-                          ผลิตภัณฑ์ประตู และ หน้าต่าง อลูมิเนียม ที่เราทำการวิจัย พัฒนา ออกแบบ และ 
-                          ผลิตซึ่งหลังจากที่ได้ผลิตและจัดจำหน่ายผลิตภัณฑ์จากอลูมิเนียม มาพักนึงแล้ว ตอนนี้เราได้ปรับปรุง แก้ไข พัฒนากระบวนการผลิต 
-                          และ การตรวจสอบคุณภาพสินค้าให้มีมาตรฐาน ในแบบฉบับของ ตรา รถถัง ที่ต้องมีคุณภาพสูงสุดก่อนส่งตรงถึงมือลูกค้า”"
-                                  data-en="“We do not only provide corrugated metal sheets, metal roofing, installation accessories, and services. Recently, we have continuously sought valuable products for buyers, installers, and residents, such as aluminum doors and windows which we research, develop, design, and manufacture. After launching our aluminum line, we have further refined our production processes and quality control to meet the 'RODTANK' standard, ensuring the highest quality before reaching our customers.”">
-                                  “เราไม่ได้จำหน่ายเพียง หลังคาเหล็กรีดลอน หรือ หลังคาเมทัลชีท อุปกรณ์ติดตั้ง และ
-                                  บริการติดตั้ง เท่านั้น ล่าสุดเรายังหาผลิตภัณฑ์ที่มีคุณค่าแก่ผู้ซื้อ
-                                  ผู้ติดตั้งและผู้พักอาศัย
-                                  อยู่เรื่อยมา เช่น
-                                  ผลิตภัณฑ์ประตู และ หน้าต่าง อลูมิเนียม ที่เราทำการวิจัย พัฒนา ออกแบบ และ
-                                  ผลิตซึ่งหลังจากที่ได้ผลิตและจัดจำหน่ายผลิตภัณฑ์จากอลูมิเนียม มาพักนึงแล้ว
-                                  ตอนนี้เราได้ปรับปรุง แก้ไข พัฒนากระบวนการผลิต
-                                  และ การตรวจสอบคุณภาพสินค้าให้มีมาตรฐาน ในแบบฉบับของ ตรา รถถัง
-                                  ที่ต้องมีคุณภาพสูงสุดก่อนส่งตรงถึงมือลูกค้า”
-                                </p>
-                              </div>
-                              <div class="down-content">
-                                <img src="assets/images/director.webp" alt="">
-                                <div class="right-content">
-                                  <h4 data-th="นายนิพนธ์ เจริญกิจ" data-en="Mr. Nipon Charoenkit">นายนิพนธ์ เจริญกิจ
-                                  </h4>
-                                  <span>CEO of Rodtank</span>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </li>
-                  </ul>
+
+                <div class="col-lg-4 align-self-center text-center">
+                  <img src="assets/images/0N7A1305.JPG" alt="Featured Image"
+                    style="width: 100%; max-width: 350px; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
                 </div>
+
               </div>
             </div>
           </div>
@@ -503,6 +573,43 @@ https://templatemo.com/tm-570-chain-app-dev
     </div>
   </div>
 
+  <div class="ceo-highlight-section">
+    <div class="container">
+      <div class="ceo-content-wrapper">
+
+        <div class="ceo-image-box wow fadeInLeft" data-wow-duration="1s" data-wow-delay="0.5s">
+          <img src="assets/images/director.webp" alt="CEO Rodtank">
+        </div>
+
+        <div class="ceo-text-box wow fadeInRight" data-wow-duration="1s" data-wow-delay="0.5s">
+
+          <img src="assets/images/quote.png" alt="Quote" class="white-quote-icon">
+          <p class="highlight-quote"
+            data-th="“เราไม่ได้จำหน่ายเพียง หลังคาเหล็กรีดลอน หรือ หลังคาเมทัลชีท อุปกรณ์ติดตั้ง และบริการติดตั้ง เท่านั้น ล่าสุดเรายังหาผลิตภัณฑ์ที่มีคุณค่าแก่ผู้ซื้อ ผู้ติดตั้งและผู้พักอาศัย อยู่เรื่อยมา เช่นผลิตภัณฑ์ประตู และ หน้าต่าง อลูมิเนียม ที่เราทำการวิจัย พัฒนา ออกแบบ และ
+            ผลิตซึ่งหลังจากที่ได้ผลิตและจัดจำหน่ายผลิตภัณฑ์จากอลูมิเนียม มาพักนึงแล้ว ตอนนี้เราได้ปรับปรุง แก้ไข พัฒนากระบวนการผลิตและ การตรวจสอบคุณภาพสินค้าให้มีมาตรฐาน ในแบบฉบับของ ตรา รถถัง ที่ต้องมีคุณภาพสูงสุดก่อนส่งตรงถึงมือลูกค้า”"
+            data-en="“We do not only provide corrugated metal sheets, metal roofing, 
+            installation accessories, and services. Recently, we have continuously sought 
+            valuable products for buyers, installers, and residents, such as aluminum doors 
+            and windows which we research, develop, design, and manufacture. After launching our
+             aluminum line, we have further refined our production processes and quality control to meet
+              the 'RODTANK' standard, ensuring the highest quality before reaching our customers.”">
+            “เราไม่ได้จำหน่ายเพียง หลังคาเหล็กรีดลอน หรือ หลังคาเมทัลชีท อุปกรณ์ติดตั้ง และบริการติดตั้ง
+            เท่านั้น ล่าสุดเรายังหาผลิตภัณฑ์ที่มีคุณค่าแก่ผู้ซื้อผู้ติดตั้งและผู้พักอาศัยอยู่เรื่อยมา เช่นผลิตภัณฑ์ประตู
+            และ หน้าต่าง อลูมิเนียม ที่เราทำการวิจัย พัฒนา ออกแบบ และ
+            ผลิตซึ่งหลังจากที่ได้ผลิตและจัดจำหน่ายผลิตภัณฑ์จากอลูมิเนียม มาพักนึงแล้วตอนนี้เราได้ปรับปรุง แก้ไข
+            พัฒนากระบวนการผลิต
+            และ การตรวจสอบคุณภาพสินค้าให้มีมาตรฐาน ในแบบฉบับของ ตรา รถถังที่ต้องมีคุณภาพสูงสุดก่อนส่งตรงถึงมือลูกค้า”
+          </p>
+          <div class="ceo-details">
+            <h4 data-th="นายนิพนธ์ เจริญกิจ" data-en="Mr. Nipon Charoenkit">นายนิพนธ์ เจริญกิจ</h4>
+            <span>CEO of Rodtank</span>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </div>
 
   <div id="contract" class="about-us section">
     <div class="container">

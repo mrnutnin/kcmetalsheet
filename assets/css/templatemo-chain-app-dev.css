@@ -1078,7 +1078,7 @@ Services Style
 
 .services:after {
   content: '';
-  background-image: url(../images/services-left-dec.png);
+  background-image: url(../images/heading1.png);
   background-repeat: no-repeat;
   position: absolute;
   left: 0;
@@ -1086,18 +1086,27 @@ Services Style
   width: 261px;
   height: 368px;
   z-index: 0;
+
 }
 
+/* --- อันนี้เพิ่มใหม่ (มุมขวา-บน) --- */
 .services:before {
   content: '';
-  background-image: url(../images/services-right-dec.png);
+  background-image: url(../images/heading1.png);
+  /* ใช้รูปเดิม หรือเปลี่ยนรูปใหม่ก็ได้ */
   background-repeat: no-repeat;
   position: absolute;
+
+  /* จัดตำแหน่งให้ชิดขวา และ ชิดบน */
   right: 0;
-  top: 0;
-  width: 1136px;
-  height: 244px;
+  top: 0px;
+  /* อาจจะปรับเป็น -50px หรือค่าอื่นๆ เพื่อขยับขึ้นลงตามสวยงาม */
+
+  width: 261px;
+  height: 368px;
   z-index: 0;
+  /* (แนะนำ) หมุนรูป 180 องศา เพื่อให้ดูสมดุลกับมุมซ้ายล่าง */
+  transform: rotate(180deg);
 }
 
 .services .section-heading {
@@ -1216,7 +1225,7 @@ About Us
 }
 
 .about-us .box-item {
-  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.07);
+  box-shadow: 0px 0px 15px rgba(231, 219, 219, 0.07);
   padding: 10px 30px;
   background-color: #fff;
   border-radius: 40px;
@@ -1246,7 +1255,7 @@ About Us
 
 .about-us span {
   font-size: 14px;
-  color: #7a7a7a;
+  color: #966565;
 }
 
 .about-us .right-image {
@@ -1277,86 +1286,122 @@ About Us
    The Clients / Publications Section
    (Modified: Smaller, Compact, Cleaner Look)
    ========================================= */
-
 .the-clients {
   margin-top: 80px;
   padding-bottom: 60px;
-  font-family: 'Kanit', sans-serif; 
 }
-
-/* --- 1. ส่วนหัวข้อ (Heading) จัดกลาง --- */
+/* --- แก้ไขส่วนรายการเอกสาร (Card Style) --- */
 .the-clients .section-heading {
   text-align: center !important;
   margin-bottom: 50px;
   display: flex;
   flex-direction: column;
   align-items: center;
+
 }
 
-.the-clients .section-heading h4 {
-  font-size: 28px;
-  font-weight: 600;
-  color: #1a2b4b;
-  margin-bottom: 15px;
-}
-
-.the-clients .section-heading img {
-  margin: 0 auto 15px auto;
-  display: block;
-  max-width: 80px;
-}
-
-.the-clients .section-heading p {
-  margin: 0 auto;
-  max-width: 700px;
-  color: #6c757d;
-  font-size: 15px;
-  line-height: 1.6;
-}
-
-
-.the-clients .naccs .menu div {
+/* 1. กำหนดสไตล์ให้เฉพาะ "กล่องแม่" (Direct Child) เท่านั้น */
+/* ใช้เครื่องหมาย > เพื่อบอกว่าเอาแค่ลูกคนแรก ไม่เอาหลาน/เหลน */
+.the-clients .naccs .menu>div {
   background-color: #fff;
-  border-radius: 8px !important; 
-
-  margin-bottom: 8px !important;   
-  box-shadow: 0 5px 15px rgba(0,0,0,0.03);
-  border-left: 4px solid transparent;
-  cursor: pointer;
-  position: relative;
+  border-radius: 15px !important;
+  /* มุมโค้ง */
+  padding: 25px 20px;
+  /* เพิ่มช่องว่างด้านในกรอบ */
+  margin-bottom: 20px !important;
+  /* เว้นระยะห่างระหว่างกล่อง */
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  /* เงาจางๆ */
+  border: 1px solid #e0e0e0;
+  /* เส้นขอบบางๆ (กรอบ) */
   transition: all 0.3s ease;
-  min-height: auto !important; 
+  cursor: pointer;
+
+  /* จัด Layout ให้ข้างใน */
+  display: block;
 }
 
-
-.the-clients .naccs .menu div.active {
-  background-color: #fff;
-  box-shadow: 0 30px 80px rgba(0,0,0,0.08);
-  transform: translateY(-2px);
-  border-left: 4px solid #4b8ef1;
+/* 2. สั่ง Reset div ข้างใน ไม่ให้มีพื้นหลังหรือเงาซ้อน */
+.the-clients .naccs .menu>div div {
+  background-color: transparent !important;
+  box-shadow: none !important;
+  border: none !important;
+  margin-bottom: 0 !important;
+  border-radius: 0 !important;
 }
 
-.menu .thumb .row {
+/* 3. เอฟเฟกต์ตอนเอาเมาส์ชี้ หรือสถานะ Active */
+.the-clients .naccs .menu>div:hover,
+.the-clients .naccs .menu>div.active {
+  border-color: #88C1B1;
+  /* เปลี่ยนสีขอบเมื่อ Active */
+  box-shadow: 0 10px 25px rgba(136, 193, 177, 0.2);
+  /* เงาสีเขียวจางๆ */
+  transform: translateY(-5px);
+  /* ลอยขึ้นนิดหน่อย */
+}
+
+/* 4. ปรับแต่งแถว (Row) ข้างในให้จัดกึ่งกลางสวยงาม */
+.the-clients .naccs .menu .thumb .row {
   align-items: center;
-  margin: 0 !important; /* ล้างค่า margin ของ row เดิม */
+  /* จัดให้อยู่กึ่งกลางแนวตั้ง */
+  margin: 0;
 }
 
+/* ปรับแต่งตัวหนังสือ */
 .menu .thumb h4 {
-  margin-bottom: 0px !important; /* ลดระยะห่างบรรทัด */
-  font-size: 16px !important;    /* [แก้] ลดขนาดตัวหนังสือชื่อไฟล์ */
+  font-size: 18px !important;
   font-weight: 600;
   color: #333;
-  line-height: 1.4;
+  margin-bottom: 5px !important;
 }
 
-.menu .thumb i {
-  color: #ccc;
-  font-size: 16px !important;   /* [แก้] ลดขนาดไอคอนดาวน์โหลด */
+.menu .thumb .date {
+  font-size: 14px;
+  color: #88C1B1;
+}
+
+/* ปรับปุ่มดาวน์โหลด */
+.menu .thumb a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  color: #88C1B1;
+  /* สีเขียวธีม */
+  font-weight: 500;
+  text-decoration: none;
   transition: 0.3s;
 }
 
-.the-clients .naccs .menu div.active i {
-  color: #4b8ef1;
+.menu .thumb a:hover {
+  color: #5E9A8E;
+}
+/* จัดแต่งรูปภาพด้านขวา */
+.right-image-decor {
+  text-align: center; /* จัดรูปให้อยู่กลาง Box */
+  padding: 20px;
+}
+
+.right-image-decor img {
+  width: 100%;           /* ให้ภาพยืดเต็มพื้นที่ column */
+  height: auto;          /* อัตราส่วนภาพไม่เพี้ยน */
+  border-radius: 20px;   /* มุมโค้งมน (เพื่อให้เข้ากับกรอบ Card) */
+  box-shadow: 0 15px 30px rgba(0,0,0,0.1); /* เงานุ่มๆ ให้ภาพดูลอย */
+  object-fit: cover;     /* ครอบภาพให้สวยงาม */
+  transition: transform 0.3s ease;
+}
+
+/* ลูกเล่นเพิ่ม: เอาเมาส์ชี้แล้วภาพขยับนิดนึง (ถ้าชอบ) */
+.right-image-decor img:hover {
+  transform: scale(1.02);
+}
+
+/* (Optional) ปรับระยะห่างบนมือถือ */
+@media (max-width: 991px) {
+  .right-image-decor {
+    margin-top: 40px; /* ถ้าจอมือถือ ให้รูปห่างจากรายการลงมาหน่อย */
+  }
 }
 
 /* --- 3. ส่วนเนื้อหา Quote (ด้านขวา) --- */
@@ -1417,18 +1462,22 @@ About Us
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 20px; /* เพิ่มระยะห่างระหว่างรูปกับชื่อ */
+  gap: 20px;
+  /* เพิ่มระยะห่างระหว่างรูปกับชื่อ */
 }
 
 /* [แก้] ขยายรูปให้ใหญ่ขึ้น */
 .the-clients .nacc .thumb .down-content img {
-  width: 90px !important;  /* ขยายรูป */
-  height: 90px !important; /* ขยายรูป */
+  width: 90px !important;
+  /* ขยายรูป */
+  height: 90px !important;
+  /* ขยายรูป */
   border-radius: 50%;
   object-fit: cover;
   border: 3px solid #fff;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-  max-width: none !important; /* ป้องกันธีมบีบรูป */
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  max-width: none !important;
+  /* ป้องกันธีมบีบรูป */
 }
 
 .the-clients .nacc .thumb .down-content .right-content {
@@ -1437,8 +1486,10 @@ About Us
 
 /* [แก้] ขยายชื่อ CEO ให้ใหญ่เบิ้ม */
 .the-clients .nacc .thumb .down-content .right-content h4 {
-  font-size: 30px !important;  /* ขนาดใหม่ ใหญ่กว่าเดิมมาก */
-  font-weight: 800 !important; /* ตัวหนาพิเศษ */
+  font-size: 30px !important;
+  /* ขนาดใหม่ ใหญ่กว่าเดิมมาก */
+  font-weight: 800 !important;
+  /* ตัวหนาพิเศษ */
   color: #1a2b4b;
   margin-bottom: 5px;
   line-height: 1.2;
@@ -1454,9 +1505,19 @@ About Us
 
 /* Responsive */
 @media (max-width: 767px) {
-  .menu .thumb h4 { font-size: 14px !important; }
-  .the-clients .nacc .thumb .client-content { padding: 25px 20px; }
-  .the-clients .nacc .thumb .down-content .right-content h4 { font-size: 24px !important; } /* มือถือให้เล็กลงหน่อยเดี๋ยวล้น */
+  .menu .thumb h4 {
+    font-size: 14px !important;
+  }
+
+  .the-clients .nacc .thumb .client-content {
+    padding: 25px 20px;
+  }
+
+  .the-clients .nacc .thumb .down-content .right-content h4 {
+    font-size: 24px !important;
+  }
+
+  /* มือถือให้เล็กลงหน่อยเดี๋ยวล้น */
 }
 
 /* 
@@ -1719,7 +1780,8 @@ footer {
   /* เปลี่ยนจากรูปภาพเป็นสีน้ำเงินเข้ม ไล่เฉดเล็กน้อยให้ดูมีมิติ */
   background: linear-gradient(135deg, #1a235a 0%, #10163a 100%);
   margin-top: 80px;
-  padding-top: 80px; /* ลด padding-top ลงเพราะเราไม่ใช้พื้นหลังรูปภาพแล้ว */
+  padding-top: 80px;
+  /* ลด padding-top ลงเพราะเราไม่ใช้พื้นหลังรูปภาพแล้ว */
   padding-bottom: 40px;
   color: #fff;
   font-family: 'Kanit', sans-serif;
@@ -1743,7 +1805,8 @@ footer {
   bottom: 0;
   width: 35px;
   height: 3px;
-  background-color: #ff581f; /* สีส้มที่เป็นสี Accent ของแบรนด์ */
+  background-color: #ff581f;
+  /* สีส้มที่เป็นสี Accent ของแบรนด์ */
   border-radius: 2px;
 }
 
@@ -1770,7 +1833,7 @@ footer {
   max-width: 150px;
   margin-bottom: 25px;
   /* ถ้าโลโก้เป็นสีเข้ม สามารถใช้ filter ช่วยให้สว่างขึ้นได้ */
-  filter: brightness(0) invert(1); 
+  filter: brightness(0) invert(1);
 }
 
 /* จัดสไตล์รายการลิงก์ */
@@ -1793,7 +1856,8 @@ footer {
 
 .footer-widget ul li a:hover {
   color: #ff581f !important;
-  padding-left: 5px; /* เพิ่มลูกเล่นขยับเมื่อ hover */
+  padding-left: 5px;
+  /* เพิ่มลูกเล่นขยับเมื่อ hover */
   opacity: 1;
 }
 
@@ -1817,6 +1881,7 @@ footer .copyright-text p {
   color: #ff581f;
   font-size: 16px;
 }
+
 /*
 ---------------------------------------------
 PopUp
@@ -2641,20 +2706,25 @@ img {
 
 /* จัดสไตล์รายการด้านในให้ตรงกันเป๊ะ */
 .main-nav .nav li .dropdown li a {
-    display: flex !important; /* ใช้ Flexbox จัดวาง */
-    align-items: center !important; /* จัดให้อยู่กึ่งกลางแนวตั้ง */
-    justify-content: flex-start !important; /* ชิดซ้ายเสมอ */
-    padding: 15px 25px !important;
-    color: #333 !important;
-    font-size: 16px !important; 
-    font-weight: 500 !important;
-    line-height: 1.2 !important; /* บีบระยะบรรทัดให้กระชับ */
-    border-bottom: 1px solid #f4f4f4;
-    transition: all 0.3s;
-    text-align: left;
-    white-space: nowrap !important; /* ห้ามตัวหนังสือตัดขึ้นบรรทัดใหม่ */
-    width: 100% !important;
-    box-sizing: border-box !important;
+  display: flex !important;
+  /* ใช้ Flexbox จัดวาง */
+  align-items: center !important;
+  /* จัดให้อยู่กึ่งกลางแนวตั้ง */
+  justify-content: flex-start !important;
+  /* ชิดซ้ายเสมอ */
+  padding: 15px 25px !important;
+  color: #333 !important;
+  font-size: 16px !important;
+  font-weight: 500 !important;
+  line-height: 1.2 !important;
+  /* บีบระยะบรรทัดให้กระชับ */
+  border-bottom: 1px solid #f4f4f4;
+  transition: all 0.3s;
+  text-align: left;
+  white-space: nowrap !important;
+  /* ห้ามตัวหนังสือตัดขึ้นบรรทัดใหม่ */
+  width: 100% !important;
+  box-sizing: border-box !important;
 }
 
 .main-nav .nav li .dropdown li:last-child a {
@@ -2663,14 +2733,130 @@ img {
 
 /* เอฟเฟกต์ตอนเมาส์ชี้ (Hover) */
 .main-nav .nav li .dropdown li a:hover {
-    background-color: #f0f4ff;
-    color: #2b3990 !important;
-    padding-left: 30px !important; /* ขยับมากขึ้นเมื่อชี้ */
+  background-color: #f0f4ff;
+  color: #2b3990 !important;
+  padding-left: 30px !important;
+  /* ขยับมากขึ้นเมื่อชี้ */
 }
 
 /* ปรับไอคอนลูกศรตรงเมนูหลักให้ใหญ่ขึ้นเล็กน้อย */
 .fa-angle-down {
-    margin-left: 8px;
-    font-size: 14px !important;
-    vertical-align: middle;
-} 
+  margin-left: 8px;
+  font-size: 14px !important;
+  vertical-align: middle;
+}
+
+/* =============================================
+   CSS สำหรับส่วน CEO Highlight (แบบแยกส่วน)
+   ============================================= */
+
+/* 1. กล่องพื้นหลังใหญ่ */
+.ceo-highlight-section {
+  background: linear-gradient(135deg, #88C1B1 0%, #5E9A8E 100%);
+
+  /* [จุดแก้ 1] ลดความสูงของกล่อง (จาก 80px เหลือ 40-50px) */
+  padding: 50px 40px;
+
+  border-radius: 40px;
+
+  /* [จุดแก้ 2] จำกัดความกว้างไม่ให้ล้นจอ และจัดกึ่งกลาง */
+  max-width: 1140px;
+  /* กำหนดความกว้างสูงสุด (ประมาณคอนเทนเนอร์ปกติ) */
+  margin: 60px auto;
+  /* auto ซ้ายขวา จะทำให้กล่องอยู่ตรงกลางจอ */
+
+  box-shadow: 0 20px 40px rgba(94, 154, 142, 0.3);
+  overflow: hidden;
+}
+
+/* 2. จัดระเบียบข้างใน (Flexbox) */
+.ceo-content-wrapper {
+  display: flex;
+  /* จัดให้รูปกับข้อความอยู่คนละฝั่ง */
+  align-items: center;
+  /* ให้อยู่กึ่งกลางแนวตั้ง */
+  justify-content: space-between;
+  gap: 60px;
+  /* ระยะห่างระหว่างรูปกับข้อความ */
+}
+
+/* 3. รูปภาพ CEO (ด้านซ้าย) */
+.ceo-image-box {
+  flex-shrink: 0;
+  /* ไม่ให้รูปโดนบีบ */
+}
+
+.ceo-image-box img {
+  width: 300px;
+  /* กำหนดขนาดรูป */
+  height: 300px;
+  /* ให้เป็นสี่เหลี่ยมจัตุรัส */
+  border-radius: 50%;
+  /* ตัดเป็นวงกลม */
+  object-fit: cover;
+  /* กันรูปเบี้ยว */
+  border: 8px solid rgba(255, 255, 255, 0.3);
+  /* ขอบใสๆ */
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* 4. ข้อความ (ด้านขวา) */
+.ceo-text-box {
+  color: #fff;
+  /* ตัวหนังสือสีขาว */
+}
+
+/* ไอคอน Quote */
+.white-quote-icon {
+  width: 60px;
+  margin-bottom: 20px;
+  filter: brightness(0) invert(1);
+  /* เปลี่ยนรูปสีดำให้เป็นสีขาว */
+  opacity: 0.8;
+}
+
+/* ข้อความคำคม */
+.highlight-quote {
+  font-size: 18px;
+  line-height: 1.8;
+  font-weight: 300;
+  font-style: italic;
+  margin-bottom: 30px;
+  color: #fff;
+  /* บังคับสีขาว */
+}
+
+/* ชื่อและตำแหน่ง */
+.ceo-details h4 {
+  font-size: 28px;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 5px;
+}
+
+.ceo-details span {
+  font-size: 16px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.8);
+  /* สีขาวจางๆ */
+  letter-spacing: 1px;
+}
+
+/* =============================================
+   Responsive: ปรับสำหรับมือถือ
+   ============================================= */
+@media (max-width: 991px) {
+  .ceo-content-wrapper {
+    flex-direction: column;
+    /* เรียงลงมาเป็นแนวตั้ง */
+    text-align: center;
+    /* จัดกึ่งกลาง */
+  }
+
+  .ceo-image-box img {
+    width: 200px;
+    /* ลดขนาดรูปลง */
+    height: 200px;
+    margin-bottom: 20px;
+  }
+}
