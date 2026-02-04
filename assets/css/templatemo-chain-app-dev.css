@@ -1078,7 +1078,7 @@ Services Style
 
 .services:after {
   content: '';
-  background-image: url(../images/heading.png);
+  background-image: url(../images/heading1.png);
   background-repeat: no-repeat;
   position: absolute;
   left: 0;
@@ -1092,14 +1092,14 @@ Services Style
 /* --- อันนี้เพิ่มใหม่ (มุมขวา-บน) --- */
 .services:before {
   content: '';
-  background-image: url(../images/heading.png);
+  background-image: url(../images/heading1.png);
   /* ใช้รูปเดิม หรือเปลี่ยนรูปใหม่ก็ได้ */
   background-repeat: no-repeat;
   position: absolute;
 
   /* จัดตำแหน่งให้ชิดขวา และ ชิดบน */
   right: 0;
-  top: 0px;
+  top: 20px;
   /* อาจจะปรับเป็น -50px หรือค่าอื่นๆ เพื่อขยับขึ้นลงตามสวยงาม */
 
   width: 261px;
