@@ -41,10 +41,28 @@
             margin-bottom: 5px;
         }
 
-        .status-up { color: #28a745; font-weight: 600; font-size: 20px; }
-        .status-down { color: #dc3545; font-weight: 600; font-size: 20px; }
-        .info-label { color: #888; font-size: 16px; }
-        .info-value { font-weight: 600; color: #333; font-size: 18px; }
+        .status-up {
+            color: #28a745;
+            font-weight: 600;
+            font-size: 20px;
+        }
+
+        .status-down {
+            color: #dc3545;
+            font-weight: 600;
+            font-size: 20px;
+        }
+
+        .info-label {
+            color: #888;
+            font-size: 16px;
+        }
+
+        .info-value {
+            font-weight: 600;
+            color: #333;
+            font-size: 18px;
+        }
 
         .set-link-btn {
             display: inline-block;
@@ -62,7 +80,7 @@
             transform: translateY(-3px);
             box-shadow: 0 10px 20px rgba(255, 88, 31, 0.3);
         }
-        
+
         .divider-custom {
             width: 60px;
             height: 4px;
@@ -80,6 +98,7 @@
             font-size: 14px;
             margin-left: 2px;
         }
+
         .lang-switch .lang-btn.active {
             background: #2b3990;
             color: #fff;
@@ -90,55 +109,48 @@
 
 <body>
 
-    <header class="header-area header-sticky wow slideInDown" data-wow-duration="0.75s" data-wow-delay="0s">
-        <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <nav class="main-nav">
-                        <a href="index.html" class="logo">
-                            <img src="assets/images/logo2.png" style="width: 50%;" alt="Rodtank">
-                        </a>
-                        <ul class="nav">
-                            <li class="scroll-to-section">
-                                <a href="index.html">หน้าแรก</a>
-                            </li>
-                            <li class="scroll-to-section has-dropdown">
-                                <a href="#" class="active">นักลงทุนสัมพันธ์ <i class="fa fa-angle-down"></i></a>
-                                <ul class="dropdown">
-                                    <li><a href="stock-info.html">ข้อมูลหลักทรัพย์</a></li>
-                                    <li><a href="stock-price.html">ราคาหุ้น</a></li>
-                                    <li><a href="news.html">ข่าวสาร</a></li>
-                                    <li><a href="publications.html">เอกสารเผยแพร่</a></li>
-                                </ul>
-                            </li>
-                            <li class="scroll-to-section">
-                               <li class="scroll-to-section"><a href="index.html#contract">ติดต่อเรา</a></li>
-                            </li>
-                            <li class="scroll-to-section">
-                                <a href="https://rodtank.com">
-                                    <i class="fa fa-shopping-bag"></i>
-                                    <span>สินค้าของเรา</span>
-                                </a>
-                            </li>
-                            <li>
-                                <div class="lang-switch">
-                                    <button class="lang-btn" id="btn-th" onclick="setLang('th')">TH</button>
-                                    <button class="lang-btn" id="btn-en" onclick="setLang('en')">EN</button>
-                                </div>
-                            </li>
-                        </ul>
-                        <a class='menu-trigger'><span>Menu</span></a>
-                    </nav>
+  <header class="header-area header-sticky wow slideInDown" data-wow-duration="0.75s" data-wow-delay="0s">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <nav class="main-nav">
+            <a href="index.html" class="logo">
+              <img src="assets/images/logo2.png" style="width: 50%;" alt="Rodtank">
+            </a>
+            <ul class="nav">
+              <li class="scroll-to-section"><a href="index.html">หน้าแรก</a></li>
+              <li class="scroll-to-section has-dropdown">
+                <a href="#" class="active">นักลงทุนสัมพันธ์ <i class="fa fa-angle-down"></i></a>
+                <ul class="dropdown">
+                  <li><a href="stock-info.html">ข้อมูลหลักทรัพย์</a></li>
+                  <li><a href="stock-price.html">ราคาหุ้น</a></li>
+                  <li><a href="news.html">ข่าวสาร</a></li>
+                  <li><a href="publications.html">เอกสารเผยแพร่</a></li>
+                </ul>
+              </li>
+              <li class="scroll-to-section"><a href="index.html#contract">ติดต่อเรา</a></li>
+              <li class="scroll-to-section"><a href="https://rodtank.com"><i class="fa fa-shopping-bag"></i>
+                  สินค้าของเรา</a></li>
+              <li>
+                <div class="lang-switch">
+                  <button class="lang-btn active" onclick="setLang('th')">TH</button>
+                  <button class="lang-btn" onclick="setLang('en')">EN</button>
                 </div>
-            </div>
+              </li>
+            </ul>
+            <a class='menu-trigger'><span>Menu</span></a>
+          </nav>
         </div>
-    </header>
+      </div>
+    </div>
+  </header>
 
     <div class="page-banner">
         <div class="container">
             <h2 class="lang-text" data-th="ราคาหุ้น" data-en="Stock Price">ราคาหุ้น</h2>
             <div class="divider-custom"></div>
-            <p class="lang-text" data-th="บริษัท เค.ซี.เมททอลชีท จำกัด (มหาชน)" data-en="K.C. METAL SHEET PUBLIC CO.,LTD">บริษัท เค.ซี.เมททอลชีท จำกัด (มหาชน)</p>
+            <p class="lang-text" data-th="บริษัท เค.ซี.เมททอลชีท จำกัด (มหาชน)"
+                data-en="K.C. METAL SHEET PUBLIC CO.,LTD">บริษัท เค.ซี.เมททอลชีท จำกัด (มหาชน)</p>
         </div>
     </div>
 
@@ -148,9 +160,11 @@
                 <div class="price-card">
                     <div class="row align-items-center">
                         <div class="col-md-6 border-end text-center">
-                            <h6 class="text-muted mb-2 lang-text" data-th="ราคาล่าสุด (KCM)" data-en="Last Price (KCM)">ราคาล่าสุด (KCM)</h6>
+                            <h6 class="text-muted mb-2 lang-text" data-th="ราคาล่าสุด (KCM)" data-en="Last Price (KCM)">
+                                ราคาล่าสุด (KCM)</h6>
                             <div id="last_price" class="stock-value">...</div>
-                            <div id="price_change" class="mt-2 lang-text" data-th="กำลังโหลด..." data-en="Loading...">กำลังโหลด...</div>
+                            <div id="price_change" class="mt-2 lang-text" data-th="กำลังโหลด..." data-en="Loading...">
+                                กำลังโหลด...</div>
                         </div>
 
                         <div class="col-md-6 ps-md-5">
@@ -167,15 +181,18 @@
                                 <div id="low_price" class="col-6 info-value">...</div>
                             </div>
                             <div class="row mb-2">
-                                <div class="col-6 info-label lang-text" data-th="ปริมาณการซื้อขาย:" data-en="Volume:">ปริมาณการซื้อขาย:</div>
+                                <div class="col-6 info-label lang-text" data-th="ปริมาณการซื้อขาย:" data-en="Volume:">
+                                    ปริมาณการซื้อขาย:</div>
                                 <div id="volume" class="col-6 info-value">...</div>
                             </div>
                         </div>
                     </div>
 
                     <div class="text-center">
-                        <a href="https://www.set.or.th/th/market/product/stock/quote/KCM/price" target="_blank" class="set-link-btn">
-                            <span class="lang-text" data-th="ดูข้อมูล Real-time จาก SET" data-en="View Real-time Data from SET">ดูข้อมูล Real-time จาก SET</span> 
+                        <a href="https://www.set.or.th/th/market/product/stock/quote/KCM/price" target="_blank"
+                            class="set-link-btn">
+                            <span class="lang-text" data-th="ดูข้อมูล Real-time จาก SET"
+                                data-en="View Real-time Data from SET">ดูข้อมูล Real-time จาก SET</span>
                             <i class="fa fa-external-link-alt ms-2"></i>
                         </a>
                     </div>
@@ -184,10 +201,10 @@
         </div>
     </div>
 
-   
-<footer id="newsletter">
-    <div class="container">
-      <!-- <div class="row">
+
+    <footer id="newsletter">
+        <div class="container">
+            <!-- <div class="row">
         <div class="col-lg-8 offset-lg-2">
           <div class="section-heading">
             <h4>Join our mailing list to receive the news &amp; latest trends</h4>
@@ -210,21 +227,22 @@
           </form>
         </div>
       </div> -->
-      <div class="row">
-        <div class="col-lg-3">
-          <div class="footer-widget">
-            <h4 data-th="ติดต่อเรา" data-en="Contact Us">ติดต่อเรา</h4>
-            <p style="color:rgb(251, 249, 249);" data-th="567 หมู่ 2 ถ.เลี่ยงเมือง ต.พระลับ อ.เมือง จ.ขอนแก่น 40000"
-              data-en="567 Moo 2, Bypass Road, Phra Lap, Mueang, Khon Kaen 40000">
-              567 หมู่ 2 ถ.เลี่ยงเมือง ต.พระลับ อ.เมือง จ.ขอนแก่น 40000
-            </p>
-            <p><a href="#">043-306999</a></p>
-            <p><a href="#">kcm@kcmetalsheet.com </a></p>
-          </div>
-        </div>
-        <div class="col-lg-3">
-          <div class="footer-widget">
-            <!-- <h4>About Us</h4>
+            <div class="row">
+                <div class="col-lg-3">
+                    <div class="footer-widget">
+                        <h4 data-th="ติดต่อเรา" data-en="Contact Us">ติดต่อเรา</h4>
+                        <p style="color:rgb(251, 249, 249);"
+                            data-th="567 หมู่ 2 ถ.เลี่ยงเมือง ต.พระลับ อ.เมือง จ.ขอนแก่น 40000"
+                            data-en="567 Moo 2, Bypass Road, Phra Lap, Mueang, Khon Kaen 40000">
+                            567 หมู่ 2 ถ.เลี่ยงเมือง ต.พระลับ อ.เมือง จ.ขอนแก่น 40000
+                        </p>
+                        <p><a href="#">043-306999</a></p>
+                        <p><a href="#">kcm@kcmetalsheet.com </a></p>
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <div class="footer-widget">
+                        <!-- <h4>About Us</h4>
             <ul>
               <li><a href="#">Home</a></li>
               <li><a href="#">Services</a></li>
@@ -237,69 +255,71 @@
               <li><a href="#">Testimonials</a></li>
               <li><a href="#">Pricing</a></li>
             </ul> -->
-          </div>
-        </div>
-        <div class="col-lg-3">
-          <div class="footer-widget">
-            <h4 data-th="ลิงก์ที่เป็นประโยชน์" data-en="Useful Links">ลิงก์ที่เป็นประโยชน์</h4>
-            <ul>
-              <li>
-                <a href="ksee/privacy-policy.html">
-                  <span data-th="นโยบายความเป็นส่วนตัว Ksee" data-en="Ksee Privacy Policy">นโยบายความเป็นส่วนตัว
-                    Ksee</span>
-                </a>
-              </li>
-            </ul>
-            <li><a href="#"></a></li>
-            <li><a href="#"></a></li>
-            <li><a href="#"></a></li>
-            <li><a href="#"> </a></li>
-            </ul>
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <div class="footer-widget">
+                        <h4 data-th="ลิงก์ที่เป็นประโยชน์" data-en="Useful Links">ลิงก์ที่เป็นประโยชน์</h4>
+                        <ul>
+                            <li>
+                                <a href="ksee/privacy-policy.html">
+                                    <span data-th="นโยบายความเป็นส่วนตัว Ksee"
+                                        data-en="Ksee Privacy Policy">นโยบายความเป็นส่วนตัว
+                                        Ksee</span>
+                                </a>
+                            </li>
+                        </ul>
+                        <li><a href="#"></a></li>
+                        <li><a href="#"></a></li>
+                        <li><a href="#"></a></li>
+                        <li><a href="#"> </a></li>
+                        </ul>
 
-          </div>
-        </div>
-        <div class="col-lg-3">
-          <div class="footer-widget">
-            <h4 data-th="เกี่ยวกับบริษัทเรา" data-en="About Our Company">About Our Company</h4>
-            <div class="logo">
-              <img src="assets/images/white-logo2.png" alt="">
-            </div>
-            <p data-th="มุ่งมั่นเป็นผู้นำด้านการผลิต จำหน่ายและบริการ ผลิตภัณฑ์โครงสร้างอาคารเหล็กสำเร็จรูป (Steel Building Solution) 
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <div class="footer-widget">
+                        <h4 data-th="เกี่ยวกับบริษัทเรา" data-en="About Our Company">About Our Company</h4>
+                        <div class="logo">
+                            <img src="assets/images/white-logo2.png" alt="">
+                        </div>
+                        <p data-th="มุ่งมั่นเป็นผู้นำด้านการผลิต จำหน่ายและบริการ ผลิตภัณฑ์โครงสร้างอาคารเหล็กสำเร็จรูป (Steel Building Solution) 
             ตลอดจนอุปกรณ์ติดตั้ง เพื่อตอบสนองความต้องการของลูกค้า พร้อมสร้างความประทับใจ และมีส่วนร่วมกับความสำเร็จของลูกค้า 
             ด้วยการปรับปรุงและพัฒนากระบวนการปฏิบัติงานอย่างต่อเนื่อง"
-              data-en="Committed to being a leader in the production, distribution, and service of Steel Building Solution products and installation accessories. We aim to meet all customer needs, creating impressive experiences and contributing to our customers' success through continuous improvement and development of our operational processes.">
-              มุ่งมั่นเป็นผู้นำด้านการผลิต จำหน่ายและบริการ ผลิตภัณฑ์โครงสร้างอาคารเหล็กสำเร็จรูป (Steel Building
-              Solution)
-              ตลอดจนอุปกรณ์ติดตั้ง เพื่อตอบสนองความต้องการของลูกค้า พร้อมสร้างความประทับใจ
-              และมีส่วนร่วมกับความสำเร็จของลูกค้า
-              ด้วยการปรับปรุงและพัฒนากระบวนการปฏิบัติงานอย่างต่อเนื่อง
-            </p>
-          </div>
+                            data-en="Committed to being a leader in the production, distribution, and service of Steel Building Solution products and installation accessories. We aim to meet all customer needs, creating impressive experiences and contributing to our customers' success through continuous improvement and development of our operational processes.">
+                            มุ่งมั่นเป็นผู้นำด้านการผลิต จำหน่ายและบริการ ผลิตภัณฑ์โครงสร้างอาคารเหล็กสำเร็จรูป (Steel
+                            Building
+                            Solution)
+                            ตลอดจนอุปกรณ์ติดตั้ง เพื่อตอบสนองความต้องการของลูกค้า พร้อมสร้างความประทับใจ
+                            และมีส่วนร่วมกับความสำเร็จของลูกค้า
+                            ด้วยการปรับปรุงและพัฒนากระบวนการปฏิบัติงานอย่างต่อเนื่อง
+                        </p>
+                    </div>
+                </div>
+                <div class="col-lg-12">
+                    <div class="copyright-text">
+                        <p>Copyright © 2024 | Powered by Rodtank.
+                            <!-- <br>Design: <a href="https://templatemo.com/" target="_blank" title="css templates">TemplateMo</a></p> -->
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="col-lg-12">
-          <div class="copyright-text">
-            <p>Copyright © 2024 | Powered by Rodtank.
-              <!-- <br>Design: <a href="https://templatemo.com/" target="_blank" title="css templates">TemplateMo</a></p> -->
-          </div>
-        </div>
-      </div>
-    </div>
-  </footer>
+    </footer>
     <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
-    
+
     <script>
         let currentLang = 'th'; // ตัวแปรเก็บภาษาปัจจุบัน
 
         // ฟังก์ชันเปลี่ยนภาษา
         function setLang(lang) {
             currentLang = lang;
-            
+
             // 1. Loop หา element ที่มี class="lang-text" (Header ไม่มี class นี้แล้ว จึงไม่ถูกเปลี่ยน)
             const elements = document.querySelectorAll('.lang-text');
             elements.forEach(el => {
                 const text = el.getAttribute(`data-${lang}`);
                 if (text) {
-                    if(el.querySelector('i')) {
+                    if (el.querySelector('i')) {
                         const icon = el.querySelector('i').outerHTML;
                         el.innerHTML = text + ' ' + icon;
                     } else {
@@ -311,7 +331,7 @@
             // 2. ปรับสถานะปุ่ม Active
             document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
             const activeBtn = document.getElementById(`btn-${lang}`);
-            if(activeBtn) activeBtn.classList.add('active');
+            if (activeBtn) activeBtn.classList.add('active');
 
             // 3. โหลดข้อมูลหุ้นใหม่ (เพื่อเปลี่ยนหน่วย M / ล้าน)
             fetchStockData();
@@ -323,7 +343,7 @@
         // ฟังก์ชันโหลดกราฟ
         function loadTradingView(locale) {
             document.getElementById('tradingview_container').innerHTML = '<div id="tradingview_kcm" style="height: 100%; width: 100%"></div>';
-            
+
             new TradingView.widget({
                 "autosize": true,
                 "symbol": "SET:KCM",
@@ -359,7 +379,7 @@
                 document.getElementById('open_price').innerText = quote.open[0].toFixed(2);
                 document.getElementById('high_price').innerText = Math.max(...quote.high).toFixed(2);
                 document.getElementById('low_price').innerText = Math.min(...quote.low).toFixed(2);
-                
+
                 // ปรับหน่วย Volume ตามภาษา (ล้าน / M)
                 const volUnit = currentLang === 'th' ? 'ล้าน' : 'M';
                 document.getElementById('volume').innerText = (meta.regularMarketVolume / 1000000).toFixed(2) + " " + volUnit;
@@ -381,13 +401,13 @@
                 document.getElementById('open_price').innerText = "0.17";
                 document.getElementById('high_price').innerText = "0.17";
                 document.getElementById('low_price').innerText = "0.15";
-                
+
                 const volUnitMock = currentLang === 'th' ? 'ล้าน' : 'M';
                 document.getElementById('volume').innerText = "15.30 " + volUnitMock;
             }
         }
 
-        window.onload = function() {
+        window.onload = function () {
             setLang('th'); // ตั้งค่าเริ่มต้น
             setInterval(fetchStockData, 60000);
         };
@@ -396,6 +416,7 @@
     <script src="vendor/jquery/jquery.min.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
     <script src="assets/js/custom.js"></script>
-<!-- 5555555 -->
+    <script src="assets/js/language-switch.js"></script>
 </body>
+
 </html>
