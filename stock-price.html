@@ -109,41 +109,42 @@
 
 <body>
 
-  <header class="header-area header-sticky wow slideInDown" data-wow-duration="0.75s" data-wow-delay="0s">
-    <div class="container">
-      <div class="row">
-        <div class="col-12">
-          <nav class="main-nav">
-            <a href="index.html" class="logo">
-              <img src="assets/images/logo2.png" style="width: 50%;" alt="Rodtank">
-            </a>
-            <ul class="nav">
-              <li class="scroll-to-section"><a href="index.html">หน้าแรก</a></li>
-              <li class="scroll-to-section has-dropdown">
-                <a href="#" class="active">นักลงทุนสัมพันธ์ <i class="fa fa-angle-down"></i></a>
-                <ul class="dropdown">
-                  <li><a href="stock-info.html">ข้อมูลหลักทรัพย์</a></li>
-                  <li><a href="stock-price.html">ราคาหุ้น</a></li>
-                  <li><a href="news.html">ข่าวสาร</a></li>
-                  <li><a href="publications.html">เอกสารเผยแพร่</a></li>
-                </ul>
-              </li>
-              <li class="scroll-to-section"><a href="index.html#contract">ติดต่อเรา</a></li>
-              <li class="scroll-to-section"><a href="https://rodtank.com"><i class="fa fa-shopping-bag"></i>
-                  สินค้าของเรา</a></li>
-              <li>
-                <div class="lang-switch">
-                  <button class="lang-btn active" onclick="setLang('th')">TH</button>
-                  <button class="lang-btn" onclick="setLang('en')">EN</button>
+    <header class="header-area header-sticky wow slideInDown" data-wow-duration="0.75s" data-wow-delay="0s">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <nav class="main-nav">
+                        <a href="index.html" class="logo">
+                            <img src="assets/images/logo2.png" style="width: 50%;" alt="Rodtank">
+                        </a>
+                        <ul class="nav">
+                            <li class="scroll-to-section"><a href="index.html">หน้าแรก</a></li>
+                            <li class="scroll-to-section has-dropdown">
+                                <a href="#" class="active">นักลงทุนสัมพันธ์ <i class="fa fa-angle-down"></i></a>
+                                <ul class="dropdown">
+                                    <li><a href="stock-info.html">ข้อมูลหลักทรัพย์</a></li>
+                                    <li><a href="stock-price.html">ราคาหุ้น</a></li>
+                                    <li><a href="news.html">ข่าวสาร</a></li>
+                                    <li><a href="publications.html">เอกสารเผยแพร่</a></li>
+                                </ul>
+                            </li>
+                            <li class="scroll-to-section"><a href="index.html#contract">ติดต่อเรา</a></li>
+                            <li class="scroll-to-section"><a href="https://rodtank.com"><i
+                                        class="fa fa-shopping-bag"></i>
+                                    สินค้าของเรา</a></li>
+                            <li>
+                                <div class="lang-switch">
+                                    <button class="lang-btn active" onclick="setLang('th')">TH</button>
+                                    <button class="lang-btn" onclick="setLang('en')">EN</button>
+                                </div>
+                            </li>
+                        </ul>
+                        <a class='menu-trigger'><span>Menu</span></a>
+                    </nav>
                 </div>
-              </li>
-            </ul>
-            <a class='menu-trigger'><span>Menu</span></a>
-          </nav>
+            </div>
         </div>
-      </div>
-    </div>
-  </header>
+    </header>
 
     <div class="page-banner">
         <div class="container">
@@ -308,38 +309,9 @@
     <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
 
     <script>
-        let currentLang = 'th'; // ตัวแปรเก็บภาษาปัจจุบัน
 
-        // ฟังก์ชันเปลี่ยนภาษา
-        function setLang(lang) {
-            currentLang = lang;
-
-            // 1. Loop หา element ที่มี class="lang-text" (Header ไม่มี class นี้แล้ว จึงไม่ถูกเปลี่ยน)
-            const elements = document.querySelectorAll('.lang-text');
-            elements.forEach(el => {
-                const text = el.getAttribute(`data-${lang}`);
-                if (text) {
-                    if (el.querySelector('i')) {
-                        const icon = el.querySelector('i').outerHTML;
-                        el.innerHTML = text + ' ' + icon;
-                    } else {
-                        el.innerText = text;
-                    }
-                }
-            });
-
-            // 2. ปรับสถานะปุ่ม Active
-            document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
-            const activeBtn = document.getElementById(`btn-${lang}`);
-            if (activeBtn) activeBtn.classList.add('active');
-
-            // 3. โหลดข้อมูลหุ้นใหม่ (เพื่อเปลี่ยนหน่วย M / ล้าน)
-            fetchStockData();
-
-            // 4. โหลด TradingView ใหม่ตามภาษา
-            loadTradingView(lang === 'th' ? 'th_TH' : 'en');
-        }
-
+        // 3. โหลดข้อมูลหุ้นใหม่ (เพื่อเปลี่ยนหน่วย M / ล้าน)
+        fetchStockData();
         // ฟังก์ชันโหลดกราฟ
         function loadTradingView(locale) {
             document.getElementById('tradingview_container').innerHTML = '<div id="tradingview_kcm" style="height: 100%; width: 100%"></div>';
