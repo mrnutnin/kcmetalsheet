@@ -39,16 +39,16 @@ https://templatemo.com/tm-570-chain-app-dev
     crossorigin="anonymous" referrerpolicy="no-referrer" />
   <style>
     :root {
-       --primary-color: rgba(74, 132, 214, 0.85);
+      --primary-color: rgba(74, 132, 214, 0.85);
 
-  /* ฟ้าอ่อน ไล่ลงมา (โซนคลื่น / กลางภาพ) */
-  --secondary-color: rgba(168, 203, 242, 0.7);
+      /* ฟ้าอ่อน ไล่ลงมา (โซนคลื่น / กลางภาพ) */
+      --secondary-color: rgba(168, 203, 242, 0.7);
 
-  /* สีตัวอักษร */
-  --text-dark: #2f3a4a;
+      /* สีตัวอักษร */
+      --text-dark: #2f3a4a;
 
-  /* ขาวอมฟ้า (พื้นล่างของภาพ) */
-  --white: #f3f7fc;
+      /* ขาวอมฟ้า (พื้นล่างของภาพ) */
+      --white: #f3f7fc;
     }
 
     body {
@@ -226,14 +226,57 @@ https://templatemo.com/tm-570-chain-app-dev
     }
 
 
+    /* --- วางทับในส่วน @media (max-width: 991px) เดิมที่มีอยู่ --- */
+
     @media (max-width: 991px) {
+
+      /* 1. จัดคอนเทนเนอร์หลักให้ขยับลงมาหน่อย และจัดกึ่งกลาง */
       .right-image {
         padding-left: 0;
-        /* ในมือถือให้กลับมาชิดซ้ายเหมือนเดิม */
-        margin-top: 50px;
-        /* เพิ่มระยะห่างด้านบนแทน */
+        margin-top: 30px;
+        /* ลดลงจาก 50px */
+        display: flex;
+        justify-content: center;
+        /* บังคับให้อยู่ตรงกลางจอ */
+        overflow: hidden;
+        /* ป้องกันไม่ให้ล้นออกนอกจอ */
+      }
+
+      /* 2. ลดความสูงของพื้นที่ลอยรูปภาพ */
+      .layered-image-container {
+        height: 380px !important;
+        /* ลดจาก 650px เหลือ 380px เพื่อให้พอดีมือถือ */
+        width: 100% !important;
+        /* ให้กว้างเต็มจอ */
+      }
+
+      /* 3. ย่อขนาดรูปภาพโทรศัพท์ลง */
+      .layered-image-container img {
+        height: 300px !important;
+        /* ลดจาก 550px */
+        width: 150px !important;
+        /* ลดจาก 280px */
+
+        border-width: 4px !important;
+        /* ลดขอบดำให้บางลงตามสัดส่วน */
+        border-radius: 20px !important;
+        /* ลดความมนลงนิดหน่อย */
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2) !important;
+        /* ลดเงาลง */
+      }
+
+      /* 4. ปรับตำแหน่งรูปหลัง (Back Image) ให้ชิดกันมากขึ้น */
+      .back-img {
+        transform: translate(-65%, -45%) !important;
+        /* ขยับให้ซ้อนกันสวยขึ้นในจอเล็ก */
+      }
+
+      /* 5. ปรับตำแหน่งรูปหน้า (Front Image) */
+      .front-img {
+        transform: translate(-15%, -40%) !important;
       }
     }
+    
   </style>
 </head>
 
@@ -469,23 +512,27 @@ https://templatemo.com/tm-570-chain-app-dev
           <div class="naccs">
             <div class="grid">
               <div class="row">
-                <div class="col-lg-8 align-self-center">
+                <div class="col-lg-8 col-md-10 col-12 align-self-center">
                   <div class="menu">
 
                     <div class="first-thumb active">
                       <div class="thumb">
                         <div class="row">
-                          <div class="col-lg-4 col-sm-4 col-12">
-                            <h4><span data-th="หนังสือเชิญประชุมสามัญผู้ถือหุ้นประจำปี 2568"
+                          <div class="col-lg-6 col-md-6 col-12">
+                            <h4>
+                              <span data-th="หนังสือเชิญประชุมสามัญผู้ถือหุ้นประจำปี 2568"
                                 data-en="Notice of the 2025 AGM">หนังสือเชิญประชุมสามัญผู้ถือหุ้นประจำปี 2568</span>
-                              <span class="text-danger">NEW</span></h4>
+                              <span class="text-danger">NEW</span>
+                            </h4>
                             <span class="date">28 เมษายน 2568</span>
                           </div>
-                          <div class="col-lg-2 col-sm-2 d-none d-sm-block"><span class="category">PDF</span></div>
-                          <div class="col-lg-4 col-sm-4 col-12">
-                            <a target="_blank"
-                              href="assets/files/kcm_shareholders_meeting_invite_2025.pdf"><span>ดาวน์โหลด</span> <i
-                                class="fa fa-download"></i></a>
+                          <div class="col-lg-2 col-md-2 d-none d-md-block">
+                            <span class="category">PDF</span>
+                          </div>
+                          <div class="col-lg-4 col-md-4 col-12">
+                            <a target="_blank" href="assets/files/kcm_shareholders_meeting_invite_2025.pdf">
+                              <span>ดาวน์โหลด</span> <i class="fa fa-download"></i>
+                            </a>
                           </div>
                         </div>
                       </div>
@@ -494,15 +541,20 @@ https://templatemo.com/tm-570-chain-app-dev
                     <div>
                       <div class="thumb active">
                         <div class="row">
-                          <div class="col-lg-4 col-sm-4 col-12">
-                            <h4><span data-th="รายงานประจำปี 2567" data-en="Annual Report 2024">รายงานประจำปี
-                                2567</span> <span class="text-danger">NEW</span></h4>
+                          <div class="col-lg-6 col-md-6 col-12">
+                            <h4>
+                              <span data-th="รายงานประจำปี 2567" data-en="Annual Report 2024">รายงานประจำปี 2567</span>
+                              <span class="text-danger">NEW</span>
+                            </h4>
                             <span class="date">31 ธันวาคม 2567</span>
                           </div>
-                          <div class="col-lg-2 col-sm-2 d-none d-sm-block"><span class="category">PDF</span></div>
-                          <div class="col-lg-4 col-sm-4 col-12">
-                            <a href="assets/images/kcm_report_2025.pdf"><span>ดาวน์โหลด</span> <i
-                                class="fa fa-download"></i></a>
+                          <div class="col-lg-2 col-md-2 d-none d-md-block">
+                            <span class="category">PDF</span>
+                          </div>
+                          <div class="col-lg-4 col-md-4 col-12">
+                            <a href="assets/images/kcm_report_2025.pdf">
+                              <span>ดาวน์โหลด</span> <i class="fa fa-download"></i>
+                            </a>
                           </div>
                         </div>
                       </div>
@@ -511,14 +563,18 @@ https://templatemo.com/tm-570-chain-app-dev
                     <div>
                       <div class="thumb active">
                         <div class="row">
-                          <div class="col-lg-4 col-sm-4 col-12">
+                          <div class="col-lg-6 col-md-6 col-12">
                             <h4>เอกสารสำหรับการเสนอชื่อกรรมการ</h4>
                             <span class="date">10 ธันวาคม 2024</span>
                           </div>
-                          <div class="col-lg-2 col-sm-2 d-none d-sm-block"><span class="category">RAR</span></div>
-                          <div class="col-lg-4 col-sm-4 col-12">
+                          <div class="col-lg-2 col-md-2 d-none d-md-block">
+                            <span class="category">RAR</span>
+                          </div>
+                          <div class="col-lg-4 col-md-4 col-12">
                             <a href="https://drive.google.com/file/d/1LC_XGiJnFh-nPA_5vGzepf-_GiIljHcE/view"
-                              target="_blank"><span>ดาวน์โหลด</span> <i class="fa fa-download"></i></a>
+                              target="_blank">
+                              <span>ดาวน์โหลด</span> <i class="fa fa-download"></i>
+                            </a>
                           </div>
                         </div>
                       </div>
@@ -527,14 +583,18 @@ https://templatemo.com/tm-570-chain-app-dev
                     <div>
                       <div class="thumb active">
                         <div class="row">
-                          <div class="col-lg-4 col-sm-4 col-12">
+                          <div class="col-lg-6 col-md-6 col-12">
                             <h4>หลักเกณฑ์การเสนอชื่อกรรมการ</h4>
                             <span class="date">10 ธันวาคม 2024</span>
                           </div>
-                          <div class="col-lg-2 col-sm-2 d-none d-sm-block"><span class="category">RAR</span></div>
-                          <div class="col-lg-4 col-sm-4 col-12">
+                          <div class="col-lg-2 col-md-2 d-none d-md-block">
+                            <span class="category">RAR</span>
+                          </div>
+                          <div class="col-lg-4 col-md-4 col-12">
                             <a href="https://drive.google.com/file/d/1LC_XGiJnFh-nPA_5vGzepf-_GiIljHcE/view"
-                              target="_blank"><span>ดาวน์โหลด</span> <i class="fa fa-download"></i></a>
+                              target="_blank">
+                              <span>ดาวน์โหลด</span> <i class="fa fa-download"></i>
+                            </a>
                           </div>
                         </div>
                       </div>
@@ -543,20 +603,25 @@ https://templatemo.com/tm-570-chain-app-dev
                     <div class="last-thumb">
                       <div class="thumb active">
                         <div class="row">
-                          <div class="col-lg-4 col-sm-4 col-12">
-                            <h4><span data-th="คำแนะนำและระเบียบการประชุมสามัญ"
-                                data-en="Guidelines and Regulations">คำแนะนำและระเบียบการประชุมสามัญ</span></h4>
+                          <div class="col-lg-6 col-md-6 col-12">
+                            <h4>
+                              <span data-th="คำแนะนำและระเบียบการประชุมสามัญ"
+                                data-en="Guidelines and Regulations">คำแนะนำและระเบียบการประชุมสามัญ</span>
+                            </h4>
                             <span class="date">10 ธันวาคม 2024</span>
                           </div>
-                          <div class="col-lg-2 col-sm-2 d-none d-sm-block"><span class="category">PDF</span></div>
-                          <div class="col-lg-4 col-sm-4 col-12">
+                          <div class="col-lg-2 col-md-2 d-none d-md-block">
+                            <span class="category">PDF</span>
+                          </div>
+                          <div class="col-lg-4 col-md-4 col-12">
                             <a href="https://drive.google.com/file/d/1_MdF6KVx25KCn16-PhTpGUb-ASD_XikA/view"
-                              target="_blank"><span>ดาวน์โหลด</span> <i class="fa fa-download"></i></a>
+                              target="_blank">
+                              <span>ดาวน์โหลด</span> <i class="fa fa-download"></i>
+                            </a>
                           </div>
                         </div>
                       </div>
                     </div>
-
                   </div>
                 </div>
 
