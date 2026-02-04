@@ -1078,7 +1078,7 @@ Services Style
 
 .services:after {
   content: '';
-  background-image: url(../images/heading1.png);
+  background-image: url(../images/heading.png);
   background-repeat: no-repeat;
   position: absolute;
   left: 0;
@@ -1092,7 +1092,7 @@ Services Style
 /* --- อันนี้เพิ่มใหม่ (มุมขวา-บน) --- */
 .services:before {
   content: '';
-  background-image: url(../images/heading1.png);
+  background-image: url(../images/heading.png);
   /* ใช้รูปเดิม หรือเปลี่ยนรูปใหม่ก็ได้ */
   background-repeat: no-repeat;
   position: absolute;
