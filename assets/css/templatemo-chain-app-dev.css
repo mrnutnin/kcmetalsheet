@@ -2231,9 +2231,19 @@ responsive
   }
 
   .main-banner .left-content h2 {
-    color: #2a2a2a;
-    margin-right: 0;
-  }
+  /* ลบสีขาวเดิมออก */
+  /* color: #ffffff; */
+  margin-right: 0;
+
+  /* ใส่โค้ดไล่สี */
+  background: linear-gradient(to right, #ffffff 0%, #89f7fe 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  
+  /* เพิ่มเงาให้ตัวหนังสือลอยขึ้นมา */
+  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));
+}
 
   .main-banner .left-content p {
     color: #afafaf;
