@@ -1300,24 +1300,16 @@ About Us
 
 }
 
-/* 1. กำหนดสไตล์ให้เฉพาะ "กล่องแม่" (Direct Child) เท่านั้น */
-/* ใช้เครื่องหมาย > เพื่อบอกว่าเอาแค่ลูกคนแรก ไม่เอาหลาน/เหลน */
+
 .the-clients .naccs .menu>div {
   background-color: #fff;
   border-radius: 15px !important;
-  /* มุมโค้ง */
   padding: 25px 20px;
-  /* เพิ่มช่องว่างด้านในกรอบ */
-  margin-bottom: 20px !important;
-  /* เว้นระยะห่างระหว่างกล่อง */
+  margin-bottom: 20px !important; 
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-  /* เงาจางๆ */
   border: 1px solid #e0e0e0;
-  /* เส้นขอบบางๆ (กรอบ) */
   transition: all 0.3s ease;
   cursor: pointer;
-
-  /* จัด Layout ให้ข้างใน */
   display: block;
 }
 
@@ -1377,6 +1369,66 @@ About Us
 .menu .thumb a:hover {
   color: #5E9A8E;
 }
+/* --- โทรศัพท์ --- */
+
+@media (max-width: 991px) {
+  /* ขยายพื้นที่คอนเทนเนอร์ให้เต็มจอมากขึ้นในมือถือ */
+  .the-clients .naccs .menu .thumb .row {
+    display: flex;
+    flex-direction: column; /* เรียงลงแนวตั้ง */
+    text-align: center; /* จัดตัวหนังสือให้อยู่กึ่งกลาง */
+  }
+
+  /* ลด Padding ของกล่องให้เหลือพื้นที่เนื้อหามากขึ้น */
+  .the-clients .naccs .menu>div {
+    padding: 20px 15px !important;
+  }
+  
+  /* ปรับขนาดหัวข้อข่าวไม่ให้ใหญ่เกินไป */
+  .menu .thumb h4 {
+    font-size: 16px !important;
+    line-height: 1.4;
+    margin-bottom: 10px !important;
+    height: auto !important; /* ป้องกันการกำหนดความสูงตายตัว */
+  }
+
+  /* แยกวันที่ออกมาให้ชัดเจน */
+  .menu .thumb .date {
+    display: block;
+    margin-bottom: 15px;
+    font-size: 13px;
+    color: #999;
+  }
+
+  /* ปรับปุ่มดาวน์โหลดให้เป็นปุ่มเต็มกดง่ายๆ */
+  .menu .thumb a {
+    display: block; /* ให้เต็มบรรทัด */
+    background-color: #f4fdfb; /* สีพื้นหลังจางๆ */
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #88C1B1;
+    width: 100%;
+  }
+
+  .menu .thumb a:hover {
+    background-color: #88C1B1;
+    color: #fff;
+  }
+  
+  /* จัดการระยะห่างระหว่าง Column ใน Bootstrap */
+  .menu .thumb .row > div {
+    width: 100%;
+    margin-bottom: 5px;
+  }
+}
+  .menu .thumb .date {
+    display: block !important;   /* บังคับให้แสดงผลเป็นก้อนบรรทัด */
+    color: #6c757d !important;   /* บังคับสีเทา (ป้องกันกรณีสีเป็นสีขาวหรือโปร่งใส) */
+    font-size: 14px !important;  /* กำหนดขนาดตัวอักษร */
+    margin-top: 5px !important;  /* เว้นระยะห่างจากหัวข้อ */
+    margin-bottom: 15px !important; /* เว้นระยะห่างจากปุ่ม */
+    opacity: 1 !important;       /* ป้องกันการถูกปรับให้จาง */
+  }
 /* จัดแต่งรูปภาพด้านขวา */
 .right-image-decor {
   text-align: center; /* จัดรูปให้อยู่กลาง Box */
