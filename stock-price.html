@@ -306,90 +306,109 @@
   <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
 
   <script>
-    let currentLang = 'th';
+    // เริ่มทำงานเมื่อโหลดหน้าเว็บ
+    window.onload = function() {
+        fetchStockData(); // โหลดข้อมูลทันที
+        setInterval(fetchStockData, 60000); // อัปเดตทุก 1 นาที
+        
+        // ถ้ามีฟังก์ชันเปลี่ยนภาษา ให้เรียกใช้ตรงนี้
+        // setLang('th'); 
+    };
 
-    // โหลดข้อมูลหุ้น
+    // ฟังก์ชันดึงราคาหุ้นจาก Yahoo Finance (ผ่าน Proxy)
     async function fetchStockData() {
-      try {
-        const url = 'https://corsproxy.io/?https://query1.finance.yahoo.com/v8/finance/chart/KCM.BK?interval=1d&range=1d';
-        const response = await fetch(url);
-        const data = await response.json();
+        const symbol = 'KCM.BK'; // รหัสหุ้นใน Yahoo
+        // ใช้ Proxy เพื่อแก้ปัญหา CORS (Cross-Origin)
+        const proxyUrl = 'https://api.allorigins.win/raw?url=';
+        const targetUrl = `https://query1.finance.yahoo.com/v8/finance/chart/${symbol}?interval=1d&range=1d`;
+        
+        try {
+            const response = await fetch(proxyUrl + encodeURIComponent(targetUrl));
+            
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
 
-        const result = data.chart.result[0];
-        const meta = result.meta;
-        const quote = result.indicators.quote[0];
+            const data = await response.json();
+            
+            // เจาะข้อมูล JSON ของ Yahoo
+            const result = data.chart.result[0];
+            const meta = result.meta;
+            const quote = result.indicators.quote[0];
 
-        // กันค่า null
-        const open = quote.open.find(v => v !== null);
-        const high = Math.max(...quote.high.filter(v => v !== null));
-        const low = Math.min(...quote.low.filter(v => v !== null));
+            // 1. ราคาล่าสุด (Regular Market Price)
+            const lastPrice = meta.regularMarketPrice;
+            const prevClose = meta.chartPreviousClose;
+            
+            // 2. คำนวณการเปลี่ยนแปลง
+            const change = lastPrice - prevClose;
+            const changePercent = (change / prevClose) * 100;
 
-        const lastPrice = meta.regularMarketPrice;
-        const prevClose = meta.chartPreviousClose;
+            // 3. ข้อมูล Open, High, Low
+            // ใช้ค่าจาก meta จะแม่นยำกว่าการหา min/max เองในบางจังหวะ
+            const openPrice = quote.open[0] || meta.regularMarketPrice; 
+            
+            // หาค่า High/Low จากอาร์เรย์ (กรองค่า null ออก)
+            const validHighs = quote.high.filter(val => val != null);
+            const validLows = quote.low.filter(val => val != null);
+            const highPrice = validHighs.length > 0 ? Math.max(...validHighs) : lastPrice;
+            const lowPrice = validLows.length > 0 ? Math.min(...validLows) : lastPrice;
 
-        const change = lastPrice - prevClose;
-        const changePercent = (change / prevClose) * 100;
+            // 4. Volume (แปลงเป็นหน่วยล้าน)
+            const volume = meta.regularMarketVolume;
+            const volumeMillion = (volume / 1000000).toFixed(2);
 
-        // แสดงผล
-        document.getElementById('last_price').innerText = lastPrice.toFixed(2);
-        document.getElementById('open_price').innerText = open.toFixed(2);
-        document.getElementById('high_price').innerText = high.toFixed(2);
-        document.getElementById('low_price').innerText = low.toFixed(2);
+            // --- นำข้อมูลไปแสดงผลที่หน้าเว็บ ---
+            
+            // แสดงราคา
+            document.getElementById('last_price').innerText = lastPrice.toFixed(2);
+            document.getElementById('open_price').innerText = openPrice.toFixed(2);
+            document.getElementById('high_price').innerText = highPrice.toFixed(2);
+            document.getElementById('low_price').innerText = lowPrice.toFixed(2);
 
-        const volUnit = currentLang === 'th' ? 'ล้าน' : 'M';
-        document.getElementById('volume').innerText =
-          (meta.regularMarketVolume / 1_000_000).toFixed(2) + ' ' + volUnit;
+            // แสดง Volume (เช็คภาษาปัจจุบัน ถ้าไม่มีตัวแปร currentLang ให้ default เป็นไทย)
+            let volUnit = 'ล้าน';
+            if (typeof currentLang !== 'undefined' && currentLang === 'en') {
+                volUnit = 'M';
+            }
+            document.getElementById('volume').innerText = `${volumeMillion} ${volUnit}`;
 
-        const changeEl = document.getElementById('price_change');
-        if (change >= 0) {
-          changeEl.className = 'status-up';
-          changeEl.innerHTML = `<i class="fas fa-caret-up"></i> +${change.toFixed(2)} (+${changePercent.toFixed(2)}%)`;
-        } else {
-          changeEl.className = 'status-down';
-          changeEl.innerHTML = `<i class="fas fa-caret-down"></i> ${change.toFixed(2)} (${changePercent.toFixed(2)}%)`;
+            // แสดงการเปลี่ยนแปลง (สีและเครื่องหมาย)
+            const changeEl = document.getElementById('price_change');
+            
+            // ล้าง Class สีเก่าออก
+            changeEl.classList.remove('text-success', 'text-danger', 'text-muted');
+            
+            let icon = '';
+            let sign = '';
+            
+            if (change > 0) {
+                changeEl.classList.add('text-success'); // สีเขียว (ใช้ class ของ Bootstrap)
+                changeEl.style.color = '#28a745'; // บังคับสีเขียว
+                icon = '<i class="fas fa-caret-up"></i>';
+                sign = '+';
+            } else if (change < 0) {
+                changeEl.classList.add('text-danger'); // สีแดง
+                changeEl.style.color = '#dc3545'; // บังคับสีแดง
+                icon = '<i class="fas fa-caret-down"></i>';
+                sign = ''; // เลขลบมีเครื่องหมาย - อยู่แล้ว
+            } else {
+                changeEl.classList.add('text-muted'); // สีเทา (ราคาไม่เปลี่ยน)
+                changeEl.style.color = '#6c757d';
+                icon = '<i class="fas fa-minus"></i>';
+                sign = '';
+            }
+
+            changeEl.innerHTML = `${icon} ${sign}${change.toFixed(2)} (${sign}${changePercent.toFixed(2)}%)`;
+
+        } catch (error) {
+            console.error('Error fetching stock data:', error);
+            // กรณีโหลดไม่ได้จริงๆ ให้แสดงขีด - หรือข้อความ Error
+            document.getElementById('last_price').innerText = "-";
+            document.getElementById('price_change').innerText = "Data N/A";
         }
-
-      } catch (error) {
-        console.error('Load stock error:', error);
-        document.getElementById('price_change').innerText = 'ไม่สามารถโหลดข้อมูลได้';
-      }
     }
-
-  
-    function loadTradingView(locale) {
-      document.getElementById('tradingview_container').innerHTML =
-        '<div id="tradingview_kcm" style="height:100%; width:100%"></div>';
-
-      new TradingView.widget({
-        autosize: true,
-        symbol: 'SET:KCM',
-        interval: 'D',
-        timezone: 'Asia/Bangkok',
-        theme: 'light',
-        style: '1',
-        locale: locale,
-        toolbar_bg: '#f1f3f6',
-        enable_publishing: false,
-        allow_symbol_change: true,
-        container_id: 'tradingview_kcm',
-        show_popup_button: true,
-        popup_width: '1000',
-        popup_height: '650'
-      });
-    }
-
-    // เปลี่ยนภาษา
-    function setLang(lang) {
-      currentLang = lang;
-    }
-
-    // เริ่มทำงาน
-    window.addEventListener('load', () => {
-      setLang('th');
-      fetchStockData();
-      setInterval(fetchStockData, 60000);
-    });
-  </script>
+</script>
 
 
   <script src="vendor/jquery/jquery.min.js"></script>
