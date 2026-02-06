@@ -1290,6 +1290,7 @@ About Us
   margin-top: 80px;
   padding-bottom: 60px;
 }
+
 /* --- แก้ไขส่วนรายการเอกสาร (Card Style) --- */
 .the-clients .section-heading {
   text-align: center !important;
@@ -1305,7 +1306,7 @@ About Us
   background-color: #fff;
   border-radius: 15px !important;
   padding: 25px 20px;
-  margin-bottom: 20px !important; 
+  margin-bottom: 20px !important;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
   border: 1px solid #e0e0e0;
   transition: all 0.3s ease;
@@ -1369,27 +1370,32 @@ About Us
 .menu .thumb a:hover {
   color: #5E9A8E;
 }
+
 /* --- โทรศัพท์ --- */
 
 @media (max-width: 991px) {
+
   /* ขยายพื้นที่คอนเทนเนอร์ให้เต็มจอมากขึ้นในมือถือ */
   .the-clients .naccs .menu .thumb .row {
     display: flex;
-    flex-direction: column; /* เรียงลงแนวตั้ง */
-    text-align: center; /* จัดตัวหนังสือให้อยู่กึ่งกลาง */
+    flex-direction: column;
+    /* เรียงลงแนวตั้ง */
+    text-align: center;
+    /* จัดตัวหนังสือให้อยู่กึ่งกลาง */
   }
 
   /* ลด Padding ของกล่องให้เหลือพื้นที่เนื้อหามากขึ้น */
   .the-clients .naccs .menu>div {
     padding: 20px 15px !important;
   }
-  
+
   /* ปรับขนาดหัวข้อข่าวไม่ให้ใหญ่เกินไป */
   .menu .thumb h4 {
     font-size: 16px !important;
     line-height: 1.4;
     margin-bottom: 10px !important;
-    height: auto !important; /* ป้องกันการกำหนดความสูงตายตัว */
+    height: auto !important;
+    /* ป้องกันการกำหนดความสูงตายตัว */
   }
 
   /* แยกวันที่ออกมาให้ชัดเจน */
@@ -1402,8 +1408,10 @@ About Us
 
   /* ปรับปุ่มดาวน์โหลดให้เป็นปุ่มเต็มกดง่ายๆ */
   .menu .thumb a {
-    display: block; /* ให้เต็มบรรทัด */
-    background-color: #f4fdfb; /* สีพื้นหลังจางๆ */
+    display: block;
+    /* ให้เต็มบรรทัด */
+    background-color: #f4fdfb;
+    /* สีพื้นหลังจางๆ */
     padding: 10px;
     border-radius: 8px;
     border: 1px solid #88C1B1;
@@ -1414,33 +1422,47 @@ About Us
     background-color: #88C1B1;
     color: #fff;
   }
-  
+
   /* จัดการระยะห่างระหว่าง Column ใน Bootstrap */
-  .menu .thumb .row > div {
+  .menu .thumb .row>div {
     width: 100%;
     margin-bottom: 5px;
   }
 }
-  .menu .thumb .date {
-    display: block !important;   /* บังคับให้แสดงผลเป็นก้อนบรรทัด */
-    color: #6c757d !important;   /* บังคับสีเทา (ป้องกันกรณีสีเป็นสีขาวหรือโปร่งใส) */
-    font-size: 14px !important;  /* กำหนดขนาดตัวอักษร */
-    margin-top: 5px !important;  /* เว้นระยะห่างจากหัวข้อ */
-    margin-bottom: 15px !important; /* เว้นระยะห่างจากปุ่ม */
-    opacity: 1 !important;       /* ป้องกันการถูกปรับให้จาง */
-  }
+
+.menu .thumb .date {
+  display: block !important;
+  /* บังคับให้แสดงผลเป็นก้อนบรรทัด */
+  color: #6c757d !important;
+  /* บังคับสีเทา (ป้องกันกรณีสีเป็นสีขาวหรือโปร่งใส) */
+  font-size: 14px !important;
+  /* กำหนดขนาดตัวอักษร */
+  margin-top: 5px !important;
+  /* เว้นระยะห่างจากหัวข้อ */
+  margin-bottom: 15px !important;
+  /* เว้นระยะห่างจากปุ่ม */
+  opacity: 1 !important;
+  /* ป้องกันการถูกปรับให้จาง */
+}
+
 /* จัดแต่งรูปภาพด้านขวา */
 .right-image-decor {
-  text-align: center; /* จัดรูปให้อยู่กลาง Box */
+  text-align: center;
+  /* จัดรูปให้อยู่กลาง Box */
   padding: 20px;
 }
 
 .right-image-decor img {
-  width: 100%;           /* ให้ภาพยืดเต็มพื้นที่ column */
-  height: auto;          /* อัตราส่วนภาพไม่เพี้ยน */
-  border-radius: 20px;   /* มุมโค้งมน (เพื่อให้เข้ากับกรอบ Card) */
-  box-shadow: 0 15px 30px rgba(0,0,0,0.1); /* เงานุ่มๆ ให้ภาพดูลอย */
-  object-fit: cover;     /* ครอบภาพให้สวยงาม */
+  width: 100%;
+  /* ให้ภาพยืดเต็มพื้นที่ column */
+  height: auto;
+  /* อัตราส่วนภาพไม่เพี้ยน */
+  border-radius: 20px;
+  /* มุมโค้งมน (เพื่อให้เข้ากับกรอบ Card) */
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+  /* เงานุ่มๆ ให้ภาพดูลอย */
+  object-fit: cover;
+  /* ครอบภาพให้สวยงาม */
   transition: transform 0.3s ease;
 }
 
@@ -1452,7 +1474,8 @@ About Us
 /* (Optional) ปรับระยะห่างบนมือถือ */
 @media (max-width: 991px) {
   .right-image-decor {
-    margin-top: 40px; /* ถ้าจอมือถือ ให้รูปห่างจากรายการลงมาหน่อย */
+    margin-top: 40px;
+    /* ถ้าจอมือถือ ให้รูปห่างจากรายการลงมาหน่อย */
   }
 }
 
@@ -2231,19 +2254,19 @@ responsive
   }
 
   .main-banner .left-content h2 {
-  /* ลบสีขาวเดิมออก */
-  /* color: #ffffff; */
-  margin-right: 0;
+    /* ลบสีขาวเดิมออก */
+    /* color: #ffffff; */
+    margin-right: 0;
 
-  /* ใส่โค้ดไล่สี */
-  background: linear-gradient(to right, #ffffff 0%, #89f7fe 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  
-  /* เพิ่มเงาให้ตัวหนังสือลอยขึ้นมา */
-  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));
-}
+    /* ใส่โค้ดไล่สี */
+    background: linear-gradient(to right, #ffffff 0%, #89f7fe 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+
+    /* เพิ่มเงาให้ตัวหนังสือลอยขึ้นมา */
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+  }
 
   .main-banner .left-content p {
     color: #afafaf;
@@ -2807,6 +2830,7 @@ img {
   font-size: 14px !important;
   vertical-align: middle;
 }
+
 /* เพิ่มส่วนนี้ต่อท้าย CSS เดิมของคุณ */
 
 /* สั่งให้แสดงผลเมื่อมี class "active" (สำหรับมือถือที่ใช้ JS สั่ง) */
@@ -2826,28 +2850,41 @@ img {
 
 /* --- ปรับแต่งเฉพาะหน้าจอมือถือ (สวย + ใช้งานง่าย) --- */
 @media (max-width: 991px) {
-  
+
   /* ตัวกล่อง Dropdown */
   .main-nav .nav li .dropdown {
-    position: static; /* ยังคงให้ดันเนื้อหาลงมา (เพื่อ UX ที่ดี) */
-    width: 90%; /* ไม่กว้างเต็มจอเกินไป ให้เหลือขอบนิดนึง */
-    margin: 10px auto; /* จัดกึ่งกลาง */
-    background: #f8f9fa; /* สีพื้นเทาอ่อนสะอาดตา */
-    box-shadow: inset 0 3px 6px rgba(0,0,0,0.05); /* เงาด้านในเบาๆ ให้ดูบุ๋มลงไป */
-    border-radius: 8px; /* มุมโค้งมน */
-    border-top: none; /* เอาขอบบนออก */
-    border-left: 4px solid #2b3990; /* ไฮไลท์เส้นซ้ายสีน้ำเงิน (แบรนด์) */
+    position: static;
+    /* ยังคงให้ดันเนื้อหาลงมา (เพื่อ UX ที่ดี) */
+    width: 90%;
+    /* ไม่กว้างเต็มจอเกินไป ให้เหลือขอบนิดนึง */
+    margin: 10px auto;
+    /* จัดกึ่งกลาง */
+    background: #f8f9fa;
+    /* สีพื้นเทาอ่อนสะอาดตา */
+    box-shadow: inset 0 3px 6px rgba(0, 0, 0, 0.05);
+    /* เงาด้านในเบาๆ ให้ดูบุ๋มลงไป */
+    border-radius: 8px;
+    /* มุมโค้งมน */
+    border-top: none;
+    /* เอาขอบบนออก */
+    border-left: 4px solid #2b3990;
+    /* ไฮไลท์เส้นซ้ายสีน้ำเงิน (แบรนด์) */
     padding: 5px 0;
-    display: none; /* ซ่อนไว้ก่อน */
+    display: none;
+    /* ซ่อนไว้ก่อน */
   }
 
   /* ลิงก์รายการด้านใน */
   .main-nav .nav li .dropdown li a {
-    padding: 12px 20px !important; /* ระยะห่างกำลังดี */
-    padding-left: 30px !important; /* ขยับตัวหนังสือเข้าไป */
+    padding: 12px 20px !important;
+    /* ระยะห่างกำลังดี */
+    padding-left: 30px !important;
+    /* ขยับตัวหนังสือเข้าไป */
     font-size: 15px !important;
-    color: #555 !important; /* สีตัวอักษรเทาเข้ม */
-    border-bottom: 1px solid #eaeaea; /* เส้นแบ่งบางๆ */
+    color: #555 !important;
+    /* สีตัวอักษรเทาเข้ม */
+    border-bottom: 1px solid #eaeaea;
+    /* เส้นแบ่งบางๆ */
     background: transparent;
   }
 
@@ -2860,10 +2897,12 @@ img {
   .main-nav .nav li .dropdown li a:active,
   .main-nav .nav li .dropdown li a:hover {
     color: #2b3990 !important;
-    background-color: rgba(43, 57, 144, 0.05); /* สีน้ำเงินจางๆ */
+    background-color: rgba(43, 57, 144, 0.05);
+    /* สีน้ำเงินจางๆ */
     font-weight: 600 !important;
   }
 }
+
 /* =============================================
    CSS สำหรับส่วน CEO Highlight (แบบแยกส่วน)
    ============================================= */
