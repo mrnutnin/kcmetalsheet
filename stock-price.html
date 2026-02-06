@@ -323,34 +323,54 @@
   <script>
     window.onload = function () {
       fetchStockData();
-      setInterval(fetchStockData, 60000); // อัปเดตทุก 1 นาที
+      setInterval(fetchStockData, 60000); 
     };
 
-
     async function fetchStockData() {
-      const symbol = "KCM:BK";
-      const apiKey = "60a8cfbbc6954fb585597e5a70e2fad5";
+      const symbol = 'KCM.BK'; 
+      // ใช้ API Key ของ FinnHub ที่เคยใช้งานได้
+      const apiKey = 'cu66r69r01qgcobrge90cu66r69r01qgcobrgea0'; 
+      const url = `https://finnhub.io/api/v1/quote?symbol=${symbol}&token=${apiKey}`;
 
-      const url = `https://api.twelvedata.com/quote?symbol=${symbol}&apikey=${apiKey}`;
-      const res = await fetch(url);
-      const data = await res.json();
+      try {
+        const response = await fetch(url);
+        const data = await response.json();
 
-      document.getElementById("last_price").innerText = Number(data.price).toFixed(2);
-      document.getElementById("open_price").innerText = Number(data.open).toFixed(2);
-      document.getElementById("high_price").innerText = Number(data.high).toFixed(2);
-      document.getElementById("low_price").innerText = Number(data.low).toFixed(2);
+        // ตรวจสอบว่ามีข้อมูลส่งกลับมาหรือไม่ เพื่อป้องกัน NaN
+        if (!data || data.c === 0 || data.c === undefined) {
+          console.warn("API ใช้งานไม่ได้หรือติดลิมิต");
+          return;
+        }
 
-      const vol = Number(data.volume);
-      document.getElementById("volume").innerText =
-        vol >= 1_000_000 ? (vol / 1_000_000).toFixed(2) + " M" :
-          vol >= 1_000 ? (vol / 1_000).toFixed(2) + " K" : vol;
+        // ดึงค่าตามโครงสร้าง FinnHub
+        const lastPrice = data.c;      // Current price
+        const openPrice = data.o;      // Open price
+        const highPrice = data.h;      // High price
+        const lowPrice = data.l;       // Low price
+        const volume = data.v || 0;    // Volume
+
+        // อัปเดตตัวเลขลงหน้าเว็บ
+        document.getElementById('last_price').innerText = lastPrice.toFixed(2);
+        document.getElementById('open_price').innerText = openPrice.toFixed(2);
+        document.getElementById('high_price').innerText = highPrice.toFixed(2);
+        document.getElementById('low_price').innerText = lowPrice.toFixed(2);
+        
+        // จัดรูปแบบ Volume (K/M)
+        let displayVolume = "";
+        if (volume >= 1000000) {
+            displayVolume = (volume / 1000000).toFixed(2) + " M";
+        } else if (volume >= 1000) {
+            displayVolume = (volume / 1000).toFixed(2) + " K";
+        } else {
+            displayVolume = volume.toLocaleString();
+        }
+        document.getElementById('volume').innerText = displayVolume;
+
+      } catch (error) {
+        console.error('Fetch Error:', error);
+      }
     }
-
-    fetchStockData();
-    setInterval(fetchStockData, 60000);
-
-
-  </script>
+</script>
   <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
   <script src="vendor/jquery/jquery.min.js"></script>
   <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
