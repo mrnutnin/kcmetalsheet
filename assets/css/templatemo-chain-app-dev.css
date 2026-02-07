@@ -2066,7 +2066,6 @@ a.btn_red {
 
 .social_login .icon {
   display: inline-block;
-
   padding: 5px 10px;
   margin-right: 10px;
   float: left;
@@ -2633,6 +2632,7 @@ responsive
   color: #ffffff !important;
   box-shadow: 0 4px 10px rgba(35, 34, 98, 0.2);
 }
+
 
 /* 5. ปรับจูนสำหรับ iPad (768px - 1024px) ให้สวยพอดีจอ */
 @media (min-width: 768px) and (max-width: 1024px) {
