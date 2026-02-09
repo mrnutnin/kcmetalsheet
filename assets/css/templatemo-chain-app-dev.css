@@ -1088,7 +1088,17 @@ Services Style
   z-index: 0;
 
 }
+/* ดันรูปวงกลมที่มาจาก section ก่อนหน้าลงไปข้างหลัง */
+.services-2::after {
+    z-index: -1 !important;
+}
 
+/* และเพื่อให้มั่นใจว่าเนื้อหาหลักลอยขึ้นมาข้างบน */
+.the-clients {
+    position: relative;
+    z-index: 10;
+    background-color: transparent;
+}
 /* --- อันนี้เพิ่มใหม่ (มุมขวา-บน) --- */
 .services:before {
   content: '';
@@ -2998,7 +3008,24 @@ img {
   /* สีขาวจางๆ */
   letter-spacing: 1px;
 }
+/* สำหรับหน้าจอมือถือ (ขนาดไม่เกิน 767px) */
+@media (max-width: 767px) {
+    .ceo-highlight-section {
+        padding: 30px 15px !important; /* ลด padding ซ้ายขวาให้เหลือ 15px เพื่อไม่ให้ล้น */
+        margin: 20px 10px !important;   /* ลด margin รอบนอกให้พอดีขอบจอ */
+        border-radius: 20px !important; /* ปรับมุมให้โค้งน้อยลงหน่อยให้รับกับขอบจอ */
+    }
 
+    .ceo-highlight-section img {
+        width: 150px !important; /* ปรับขนาดรูป CEO ให้เล็กลงในมือถือ */
+        height: 150px !important;
+    }
+
+    .ceo-highlight-section p {
+        font-size: 15px !important; /* ปรับขนาดตัวอักษรให้อ่านง่ายขึ้น */
+        line-height: 1.6;
+    }
+}
 /* =============================================
    Responsive: ปรับสำหรับมือถือ
    ============================================= */
